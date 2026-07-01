@@ -8,13 +8,11 @@ body {
     background: #07100e;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    /* Faltu horizontal scrolling rokne ke liye */
+
 }
 
-/* --- Fixed Left/Right Outer Gaps --- */
 .container-fluid {
     max-width: 1400px !important;
-    /* Ek global balanced limit de di taaki bada gap na lage */
     margin: 0 auto;
 }
 
@@ -226,10 +224,9 @@ body {
 .bottom-cards-row {
     width: 100%;
     margin-top: 1px !important;
-    /* <--- Isse upar ka gap set hoga */
+
     display: flex !important;
     gap: 3px !important;
-    /* <--- Isse dono boxes ke beech ka gap set hoga */
 }
 
 .card-half-width {
@@ -341,17 +338,6 @@ body {
     background-color: #07100e;
 }
 
-/* .project-card {
-    position: relative;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border-radius: 1px; 
-} */
 
 .project-card {
     position: relative;
@@ -359,7 +345,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* <--- Yeh line 'space-between' se badal kar 'flex-end' kar di hai */
+
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -456,32 +442,25 @@ body {
 
 .center-icon i {
     color: #fff !important;
-    /* Color white hi rahega */
+
     opacity: 0.2;
 }
 
-/* --- Naya Chota Custom Card --- */
+/* ---  Chota Custom Card --- */
 .custom-environment-card {
     position: relative;
     padding: 20px;
     height: 160px;
-    /* <--- Size chota rakhne ke liye height fix ki hai */
     background: linear-gradient(135deg, #052416 0%, #02120b 100%);
-    /* Deep green layout gradient */
     border: 1px solid rgba(42, 175, 137, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* Text ko bilkul bottom me rakhega */
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    /* 👇 NAYE GAPS YAHAN ADD KAR DIYE HAIN 👇 */
     margin-top: 6px;
-    /* Upar se thoda gap dene ke liye */
     margin-left: 24px;
-    /* Left se thoda right me khisakane ke liye */
 }
 
 /* Hover Effect */
@@ -504,7 +483,7 @@ body {
     font-size: 3rem;
     color: #2AAF89 !important;
     opacity: 0.15;
-    /* <--- Image ki tarah icon ko halka/dhundhla rakhne ke liye */
+
 }
 
 /* Text Container Styling */
@@ -527,7 +506,7 @@ body {
 .env-card-title-text {
     color: #ffffff;
     font-size: 12px;
-    /* Chota size text */
+
     font-weight: 700;
     margin: 0 0 2px 0;
 }
@@ -543,12 +522,12 @@ body {
     z-index: 10;
     margin-top: -48px;
     padding-left: 14px;
-    /* Left side se gap */
+
     padding-right: 14px;
-    /* Right side se gap */
+
 }
 
-/* --- Clean Service Card (Dono side perfect barabar gap) --- */
+/* --- Clean Service Card  --- */
 .service-card-custom {
     background-color: #0D1A15;
     /* Aapka selected grey background */
@@ -559,10 +538,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Content ko upar-niche auto balance rakhega */
+
     gap: 10px;
     margin: 0;
-    /* Bootstrap ke columns ko tight rakhne ke liye default margin zero */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -623,62 +601,46 @@ body {
     margin: 0;
 }
 
-/* Main Section Wrapper (Dark Background) */
-/* .studio-section {
-    background-color: #050b09;
-    padding: 60px 40px;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr; 
-    gap: 20px;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-} */
- 
-/* --- Direct CSS Gap Control --- */
-/* --- Symmetrical Equal Height Container --- */
 
-/* Pure row ki height yahan se fixed aur kam ho gayi hai */
 .studio-custom-section .row {
-    height: 300px !important; 
+    height: 300px !important;
     align-items: stretch;
 }
 
-/* Direct CSS Gap Control */
+
 .studio-custom-section {
-    margin-top: 2px !important;  /* Agar upar aur chipkana ho toh isko -20px ya -30px kar dena */
-    padding-top: 2px !important;   /* Inner top space bilkul zero */
+    margin-top: 2px !important;
+    padding-top: 2px !important;
 }
 
-/* Left Box Padding */
+
 .studio-about-box {
-    background-color: #0D1A15; 
+    background-color: #0D1A15;
     border: 1px solid rgba(255, 255, 255, 0.03);
     border-radius: 1px;
-    padding: 40px !important; /* Spacing kam ki taaki height choti rahe */
+    padding: 40px !important;
 }
 
-/* Right Master Box (With inner alignment fix) */
+/* Right Master Box  */
 .studio-features-container {
-    background-color: #0A150F; 
+    background-color: #0A150F;
     border: 1px solid rgba(255, 255, 255, 0.02);
     border-radius: 1px;
-    justify-content: center !important; /* Cards ko center me rakhega bina faltu gap ke */
+    justify-content: center !important;
 }
 
-/* Inside 4 Cards Padding (Height compact karne ke liye) */
+
 .studio-feature-card {
-    background-color: #0C2018; 
-    border: 1px solid rgba(42, 175, 137, 0.12); 
+    background-color: #0C2018;
+    border: 1px solid rgba(42, 175, 137, 0.12);
     border-radius: 3px;
-    padding: 10px 15px !important; /* Cards ab chote blocks me perfectly fit hain */
+    padding: 10px 15px !important;
 }
 
 /* Texts Controllers */
 .studio-desc {
     color: #8fa09a !important;
-    font-size: 8px !important; /* Sub-text thoda chota kiya */
+    font-size: 8px !important;
     line-height: 1.4;
 }
 
@@ -714,7 +676,7 @@ body {
 }
 
 .studio-feature-card h6 {
-    font-size: 11.5px !important; /* Heading text thoda compact kiya */
+    font-size: 11.5px !important;
     letter-spacing: 0.2px;
     margin-bottom: 2px !important;
 }
@@ -724,18 +686,20 @@ body {
     .main-heading-custom {
         font-size: 20px !important;
     }
-    .studio-about-box, .studio-features-container {
+
+    .studio-about-box,
+    .studio-features-container {
         padding: 30px !important;
     }
 }
-/* --- FIXED SLEEK BOX AND FOOTER STYLING --- */
+
 
 .custom-footer-wrapper {
     width: 100%;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Max-width control taaki bohot zyada stretch na ho screen par */
+
 .custom-container {
     max-width: 1300px;
     padding-left: 25px;
@@ -745,35 +709,35 @@ body {
 
 /* --- 1. Slim Green Box --- */
 .custom-cta-banner {
-    background-color: #2AAF89; 
-    padding: 28px 0;    /* 24px se ghata kar 15px kiya, isse height ekdum slim ho jayegi */
-    margin-top: 50px;   /* Upar se gap ke liye */
+    background-color: #2AAF89;
+    padding: 28px 0;
+    margin-top: 50px;
     width: 100%;
 }
 
 .banner-heading {
-    font-size: 18px; /* Font size chota kiya image ke hisab se */
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.3px;
     margin-bottom: 4px;
 }
 
 .banner-subtext {
-    font-size: 10px; /* Subtext perfect clean display */
+    font-size: 10px;
     font-weight: 400;
     opacity: 0.9;
     margin-bottom: 0;
 }
 
 /* Compact Buttons */
-.btn-filled, 
+.btn-filled,
 .btn-outlined {
-    font-size: 8px; /* Text size standard kiya */
+    font-size: 8px;
     font-weight: 500;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    padding: 6px 16px; /* Internal padding tight ki */
-    border-radius: 0px !important; /* Perfect sharp box edge */
+    padding: 6px 16px;
+    border-radius: 0px !important;
     display: inline-block;
     white-space: nowrap;
     transition: all 0.3s ease;
@@ -787,7 +751,7 @@ body {
 
 .btn-filled:hover {
     background-color: transparent !important;
-    color: #CAE7CB!important;
+    color: #CAE7CB !important;
     border: 1px solid #ffffff !important;
 }
 
@@ -805,8 +769,8 @@ body {
 
 /* --- 2. Compact Black Footer --- */
 .custom-black-footer {
-    background-color: #070707; 
-    padding:28px 0;    /* 30px se ghata kar 15px kiya, isse footer ki height bhi bohot kam ho jayegi */
+    background-color: #070707;
+    padding: 28px 0;
     width: 100%;
 }
 
@@ -819,11 +783,11 @@ body {
 }
 
 .footer-logo .accent-color {
-    color: #2cb68f; 
+    color: #2cb68f;
 }
 
 .footer-copyright {
-    color: #444444; /* Dark muted gray */
+    color: #444444;
     font-size: 6px;
     margin-bottom: 0;
     letter-spacing: 0.5px;
@@ -833,7 +797,7 @@ body {
 .footer-links {
     display: flex;
     justify-content: flex-end;
-    gap: 25px; /* Links ke beech perfect space */
+    gap: 25px;
     flex-wrap: wrap;
 }
 
@@ -858,6 +822,7 @@ body {
         gap: 15px;
         margin-top: 10px;
     }
+
     .btn-wrapper {
         width: 100%;
         justify-content: center;
@@ -868,7 +833,9 @@ body {
     .btn-wrapper {
         flex-direction: column;
     }
-    .btn-filled, .btn-outlined {
+
+    .btn-filled,
+    .btn-outlined {
         width: 100%;
         text-align: center;
     }
