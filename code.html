@@ -1,0 +1,199 @@
+.studio-section {
+    background-color: #050b09;
+    /* 👇 PEHLE 60px THA, ISKO KAM KARKE 10px YA 20px KAR DO TAKI UPAR CHIPAK JAYE */
+    padding: 4px 60px 40px ; /* Top, Right, Bottom, Left */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start; /* Ye dono boxes ko top se align rakhega */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Content Styling */
+.left-content {
+    background-color: #0b1512;
+    display: flex;
+    flex-direction: column;
+    /* ---> YAHAN SE TEXT BEECH ME AAYEGA: Content ko center me align karne ke liye */
+    justify-content: center;
+    padding: 60px 80px;
+    /* ---> Right side ke boxes se height match karne ke liye min-height di hai */
+    min-height: 8cm;
+    box-sizing: border-box;
+    border-radius: 1px;
+    /* Taaki right wale boxes ki tarah corners rounded rahein */
+    gap: 10px;
+}
+
+.tagline {
+    color: #1bd19c;
+    /* Bright teal/green code */
+    font-size: 6px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.main-heading {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.description {
+    color: #8fa09a;
+    /* Soft gray-green color */
+    font-size: 10px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Button Styling */
+.about-btn {
+    background-color: #1bd19c;
+    color: #ffff;
+    border: none;
+    padding: 8px 18px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 1px;
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 10px;
+    transition: opacity 0.2s;
+}
+
+.about-btn:hover {
+    opacity: 0.9;
+}
+
+/* Right Side Cards Container */
+.right-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Individual Feature Card Box */
+.feature-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background-color: #0b1512;
+    /* Jo image me boxes ka dark shade h */
+    border: 1px solid rgba(27, 209, 156, 0.08);
+    /* Subtle low-opacity border */
+    border-radius: 6px;
+    padding: 16px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Boxes */
+.feature-box:hover {
+    border-color: rgba(27, 209, 156, 0.25);
+    background-color: #101e1a;
+}
+
+/* Icon positioning */
+.feature-icon {
+    margin-top: 3px;
+}
+
+/* Box Content */
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.feature-title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.feature-subtitle {
+    color: #6a7b75;
+    /* Thoda zyada dark text detail ke liye */
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Mobile Responsive Setup */
+@media (max-width: 768px) {
+    .studio-section {
+        grid-template-columns: 1fr;
+        /* Mobile me ek ke niche ek dikhega */
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .main-heading {
+        font-size: 28px;
+    }
+}
+
+
+<!-- HTML Code -->
+
+ <section class="studio-section">
+  <!-- Left Side Content -->
+  <div class="left-content">
+    <span class="tagline">ABOUT THE STUDIO</span>
+    <h2 class="main-heading">Where Technology Meets Creative Vision</h2>
+    <p class="description">
+      I Mack Production is based in Rajkot, Gujarat — a creative studio driven by passion  
+      for 3D, VFX, and storytelling. We combine deep technical  expertise <br>
+        with artistic  precision to deliver work that stands out globally.
+    </p>
+    <button class="about-btn">ABOUT US</button>
+  </div>
+
+  <!-- Right Side Content (Cards) -->
+  <div class="right-boxes">
+    <div class="feature-box">
+      <div class="feature-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 17 6-5-6-5v10z"/><path d="m22 17-6-5 6-5v10z"/><path d="m14 17-6-5 6-5v10z"/></svg>
+      </div>
+      <div class="feature-content">
+        <h3 class="feature-title">Industry-Grade Pipeline</h3>
+        <p class="feature-subtitle">Blender · Unreal Engine · After Effects · DaVinci Resolve</p>
+      </div>
+    </div>
+
+    <div class="feature-box">
+      <div class="feature-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 18.8v-4L2 13"/><path d="M12 22v-6.3"/></svg>
+      </div>
+      <div class="feature-content">
+        <h3 class="feature-title">Academic Excellence</h3>
+        <p class="feature-subtitle">Faculty at Marwadi University — teaching 3D, VFX & Animation</p>
+      </div>
+    </div>
+
+    <div class="feature-box">
+      <div class="feature-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="feature-content">
+        <h3 class="feature-title">Growing Team</h3>
+        <p class="feature-subtitle">Interns & professionals working on real-world projects</p>
+      </div>
+    </div>
+
+    <div class="feature-box">
+      <div class="feature-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="feature-content">
+        <h3 class="feature-title">Rajkot, Gujarat, India</h3>
+        <p class="feature-subtitle">Serving clients locally & internationally</p>
+      </div>
+    </div>
+</div>
+</section>

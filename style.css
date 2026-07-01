@@ -1,0 +1,875 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #07100e;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    /* Faltu horizontal scrolling rokne ke liye */
+}
+
+/* --- Fixed Left/Right Outer Gaps --- */
+.container-fluid {
+    max-width: 1400px !important;
+    /* Ek global balanced limit de di taaki bada gap na lage */
+    margin: 0 auto;
+}
+
+/* Navbar */
+.custom-navbar {
+    background: #07100e;
+    padding: 8px 0;
+}
+
+.custom-navbar .container-fluid {
+    padding: 4px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #07100e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Logo */
+.logo {
+    text-decoration: none;
+}
+
+.logo h2 {
+    color: #2AAF89;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+}
+
+.logo span {
+    color: #fff;
+}
+
+.logo p {
+    color: #a9aaa3;
+    font-size: 7px;
+    letter-spacing: 3px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Menu */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0;
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2AAF89 !important;
+}
+
+/* Button */
+.project-btn {
+    background: #2AAF89;
+    color: #fff;
+    text-decoration: none;
+    padding: 4px 20px;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.project-btn:hover {
+    background: #12af94;
+    color: #fff;
+}
+
+/* Hero Section Styling */
+.hero {
+    background-color: #07100e;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.hero h2 {
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 10px;
+    max-width: 450px;
+    line-height: 1.8;
+}
+
+/* Badge & Animation */
+.badge {
+    border: 0.5px solid #2AAF89 !important;
+    color: #2AAF89 !important;
+    font-size: 6px !important;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.blinking-dot {
+    display: inline-block;
+    margin-right: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Buttons Styles */
+.custom-btn-filled,
+.custom-btn-outline {
+    font-size: 8px;
+    font-weight: normal !important;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-filled {
+    background-color: #2bb38a !important;
+    border: 1px solid #2bb38a !important;
+    color: #ffffff !important;
+}
+
+.custom-btn-filled:hover {
+    background-color: #07100e !important;
+    border-color: #ebf2f0 !important;
+}
+
+.custom-btn-outline {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+}
+
+.custom-btn-outline:hover {
+    background-color: #2bb38a !important;
+    border-color: #2bb38a !important;
+}
+
+/* Right Side Cards Container */
+.cards-container {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 48px;
+}
+
+/* Top Feature Card */
+.featured-card {
+    background: linear-gradient(135deg, #0A291E 50%, #114937 100%);
+    min-height: 110px;
+    border: 1px solid rgba(22, 90, 67, 0.28);
+    width: 100%;
+}
+
+.card-icon-box {
+    width: 14px;
+    height: 15px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    opacity: 0.7;
+    margin-bottom: 8px !important;
+}
+
+.card-sub {
+    font-size: 6px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    color: #146B4D !important;
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+}
+
+.card-desc {
+    font-size: 8px;
+    line-height: 1.2;
+}
+
+/* Bottom Row Cards */
+.bottom-cards-row {
+    width: 100%;
+    margin-top: 1px !important;
+    /* <--- Isse upar ka gap set hoga */
+    display: flex !important;
+    gap: 3px !important;
+    /* <--- Isse dono boxes ke beech ka gap set hoga */
+}
+
+.card-half-width {
+    width: 50%;
+    padding: 0 -1px;
+}
+
+.vfx-card {
+    background: linear-gradient(135deg, #121628 40%, #101D35 60%);
+    min-height: 105px;
+    border: 1px solid rgba(15, 37, 67, 0.1);
+    width: 100%;
+}
+
+.vfx-card .card-icon-box,
+.cgi-card .card-icon-box {
+    height: 16px;
+}
+
+.cgi-card {
+    background: linear-gradient(135deg, #321C00 40%, #532D00 110%);
+    min-height: 105px;
+    border: 1px solid #532D00;
+    width: 100%;
+}
+
+.card-heading-small {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+}
+
+.card-desc-small {
+    font-size: 8px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+}
+
+/* --- Stats Counter Section Styles --- */
+.stats-section {
+    background-color: #07100e;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-box {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+    color: #2AAF89;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.0;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.stat-box:last-child {
+    border-bottom: none;
+}
+
+@media(min-width: 768px) {
+    .stat-box {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+    }
+
+    .stat-box:last-child {
+        border-right: none;
+    }
+}
+
+/* Mobile Adjustments */
+@media(max-width:991px) {
+    .custom-navbar .container-fluid {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .project-btn,
+    .custom-btn-filled,
+    .custom-btn-outline {
+        margin-top: 10px;
+        font-size: 7px;
+        padding: 5px 12px;
+    }
+
+    .badge {
+        font-size: 5px !important;
+    }
+}
+
+/* --- Projects Gallery Styles --- */
+.projects-gallery-section {
+    background-color: #07100e;
+}
+
+/* .project-card {
+    position: relative;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 1px; 
+} */
+
+.project-card {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* <--- Yeh line 'space-between' se badal kar 'flex-end' kar di hai */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.big-card {
+    height: 70%;
+    min-height: 325px;
+}
+
+.small-card {
+    height: 160px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+}
+
+.small-card .center-icon {
+    font-size: 2.5rem;
+}
+
+.big-card .center-icon {
+    font-size: 4.5rem;
+}
+
+/* Card Typography */
+.card-info {
+    z-index: 2;
+}
+
+.card-category {
+    color: #2AAF89;
+    font-size: 6px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-title-text {
+    color: #fffbfb;
+    font-size: 10px;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+}
+
+.big-card .card-title-text {
+    font-size: 18px;
+}
+
+.card-year {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 6px;
+    display: block;
+}
+
+/* --- Gradients --- */
+.card-green {
+    background: linear-gradient(135deg, #092e1e 20%, #051a11 100%);
+}
+
+.card-purple {
+    background: linear-gradient(135deg, #2b0e43 0%, #11051c 100%);
+}
+
+.card-gold {
+    background: linear-gradient(135deg, #4d3807 0%, #211702 100%);
+}
+
+.card-blue {
+    background: linear-gradient(135deg, #0a263d 0%, #03101c 100%);
+}
+
+.card-red {
+    background: linear-gradient(135deg, #441111 0%, #1c0505 100%);
+}
+
+.center-icon i {
+    color: #fff !important;
+    /* Color white hi rahega */
+    opacity: 0.2;
+}
+
+/* --- Naya Chota Custom Card --- */
+.custom-environment-card {
+    position: relative;
+    padding: 20px;
+    height: 160px;
+    /* <--- Size chota rakhne ke liye height fix ki hai */
+    background: linear-gradient(135deg, #052416 0%, #02120b 100%);
+    /* Deep green layout gradient */
+    border: 1px solid rgba(42, 175, 137, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Text ko bilkul bottom me rakhega */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* 👇 NAYE GAPS YAHAN ADD KAR DIYE HAIN 👇 */
+    margin-top: 6px;
+    /* Upar se thoda gap dene ke liye */
+    margin-left: 24px;
+    /* Left se thoda right me khisakane ke liye */
+}
+
+/* Hover Effect */
+.custom-environment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(7, 84, 29, 0.2);
+}
+
+/* Halka center icon (Leaf) */
+.env-center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.env-center-icon i {
+    font-size: 3rem;
+    color: #2AAF89 !important;
+    opacity: 0.15;
+    /* <--- Image ki tarah icon ko halka/dhundhla rakhne ke liye */
+}
+
+/* Text Container Styling */
+.env-card-info {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+}
+
+.env-card-category {
+    color: #2AAF89;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.env-card-title-text {
+    color: #ffffff;
+    font-size: 12px;
+    /* Chota size text */
+    font-weight: 700;
+    margin: 0 0 2px 0;
+}
+
+.env-card-year {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 8px;
+    display: block;
+}
+
+.services-wrapper-section {
+    position: relative;
+    z-index: 10;
+    margin-top: -48px;
+    padding-left: 14px;
+    /* Left side se gap */
+    padding-right: 14px;
+    /* Right side se gap */
+}
+
+/* --- Clean Service Card (Dono side perfect barabar gap) --- */
+.service-card-custom {
+    background-color: #0D1A15;
+    /* Aapka selected grey background */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    height: 145px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Content ko upar-niche auto balance rakhega */
+    gap: 10px;
+    margin: 0;
+    /* Bootstrap ke columns ko tight rakhne ke liye default margin zero */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Smooth hover */
+.service-card-custom:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    transform: translateY(-3px);
+}
+
+.service-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Icon Box */
+.service-icon-box {
+    width: 34px;
+    height: 34px;
+    background-color: rgba(42, 175, 137, 0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon-box i {
+    color: #2AAF89;
+    font-size: 1rem;
+}
+
+/* Serial Numbers */
+.service-number {
+    color: rgba(42, 175, 137, 0.3);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Text Formatting */
+.service-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.service-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.service-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10.5px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Main Section Wrapper (Dark Background) */
+/* .studio-section {
+    background-color: #050b09;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 20px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+ 
+/* --- Direct CSS Gap Control --- */
+/* --- Symmetrical Equal Height Container --- */
+
+/* Pure row ki height yahan se fixed aur kam ho gayi hai */
+.studio-custom-section .row {
+    height: 300px !important; 
+    align-items: stretch;
+}
+
+/* Direct CSS Gap Control */
+.studio-custom-section {
+    margin-top: 2px !important;  /* Agar upar aur chipkana ho toh isko -20px ya -30px kar dena */
+    padding-top: 2px !important;   /* Inner top space bilkul zero */
+}
+
+/* Left Box Padding */
+.studio-about-box {
+    background-color: #0D1A15; 
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 1px;
+    padding: 40px !important; /* Spacing kam ki taaki height choti rahe */
+}
+
+/* Right Master Box (With inner alignment fix) */
+.studio-features-container {
+    background-color: #0A150F; 
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 1px;
+    justify-content: center !important; /* Cards ko center me rakhega bina faltu gap ke */
+}
+
+/* Inside 4 Cards Padding (Height compact karne ke liye) */
+.studio-feature-card {
+    background-color: #0C2018; 
+    border: 1px solid rgba(42, 175, 137, 0.12); 
+    border-radius: 3px;
+    padding: 10px 15px !important; /* Cards ab chote blocks me perfectly fit hain */
+}
+
+/* Texts Controllers */
+.studio-desc {
+    color: #8fa09a !important;
+    font-size: 8px !important; /* Sub-text thoda chota kiya */
+    line-height: 1.4;
+}
+
+.studio-tag {
+    color: #2AAF89;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.main-heading-custom {
+    font-size: 26px !important;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+
+.btn-studio-accent {
+    background-color: #2AAF89 !important;
+    color: #07100e !important;
+    font-size: 8px !important;
+    letter-spacing: 1.5px;
+    padding: 8px 20px !important;
+    border-radius: 2px !important;
+    border: none;
+}
+
+.studio-icon-box {
+    color: #2AAF89;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+}
+
+.studio-feature-card h6 {
+    font-size: 11.5px !important; /* Heading text thoda compact kiya */
+    letter-spacing: 0.2px;
+    margin-bottom: 2px !important;
+}
+
+/* Responsive Fixes */
+@media(max-width: 767px) {
+    .main-heading-custom {
+        font-size: 20px !important;
+    }
+    .studio-about-box, .studio-features-container {
+        padding: 30px !important;
+    }
+}
+/* --- FIXED SLEEK BOX AND FOOTER STYLING --- */
+
+.custom-footer-wrapper {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Max-width control taaki bohot zyada stretch na ho screen par */
+.custom-container {
+    max-width: 1300px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 0 auto;
+}
+
+/* --- 1. Slim Green Box --- */
+.custom-cta-banner {
+    background-color: #2AAF89; 
+    padding: 28px 0;    /* 24px se ghata kar 15px kiya, isse height ekdum slim ho jayegi */
+    margin-top: 50px;   /* Upar se gap ke liye */
+    width: 100%;
+}
+
+.banner-heading {
+    font-size: 18px; /* Font size chota kiya image ke hisab se */
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.banner-subtext {
+    font-size: 10px; /* Subtext perfect clean display */
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Compact Buttons */
+.btn-filled, 
+.btn-outlined {
+    font-size: 8px; /* Text size standard kiya */
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 16px; /* Internal padding tight ki */
+    border-radius: 0px !important; /* Perfect sharp box edge */
+    display: inline-block;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-filled {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid transparent !important;
+}
+
+.btn-filled:hover {
+    background-color: transparent !important;
+    color: #CAE7CB!important;
+    border: 1px solid #ffffff !important;
+}
+
+.btn-outlined {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.btn-outlined:hover {
+    background-color: #ffffff !important;
+    color: #2cb68f !important;
+    border: 1px solid #ffffff !important;
+}
+
+/* --- 2. Compact Black Footer --- */
+.custom-black-footer {
+    background-color: #070707; 
+    padding:28px 0;    /* 30px se ghata kar 15px kiya, isse footer ki height bhi bohot kam ho jayegi */
+    width: 100%;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo .accent-color {
+    color: #2cb68f; 
+}
+
+.footer-copyright {
+    color: #444444; /* Dark muted gray */
+    font-size: 6px;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Fixed Footer Links wrap issue */
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px; /* Links ke beech perfect space */
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Overrides */
+@media (max-width: 767px) {
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .btn-wrapper {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-wrapper {
+        flex-direction: column;
+    }
+    .btn-filled, .btn-outlined {
+        width: 100%;
+        text-align: center;
+    }
+}
