@@ -1,0 +1,4496 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #07100e;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+} /* Applies to: page body */
+
+:root {
+    --space-xs: 0.4rem;
+    --space-sm: 0.75rem;
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --container-max: 1400px;
+}
+
+
+html, body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 512 512'%3E%3Cpath d='M16 16L240 496L314.3 323.7L496 240L16 16Z' fill='%231f8265'/%3E%3Cpath d='M16 16L240 496L314.3 323.7L16 16Z' fill='%232AAF89'/%3E%3C/svg%3E") 1 1, auto !important;
+} /* Applies to: html and body cursor */
+
+.interactive-cursor,
+.project-btn,
+.custom-btn-filled,
+.custom-btn-outline,
+.btn-filled,
+.btn-outlined,
+.btn-studio-accent,
+.featured-card,
+.vfx-card,
+.cgi-card,
+.project-card,
+.service-card-custom,
+.studio-feature-card {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512'%3E%3Cpath d='M16 16L240 496L314.3 323.7L496 240L16 16Z' fill='%23249474'/%3E%3Cpath d='M16 16L240 496L314.3 323.7L16 16Z' fill='%2336cb9f'/%3E%3C/svg%3E") 1 1, pointer !important;
+} /* Applies to: interactive elements cursor */
+
+
+.container-fluid {
+    max-width: 1400px !important;
+    margin: 0 auto;
+}
+/* Navbar */
+.custom-navbar {
+    background: #07100e;
+    padding: 8px 0;
+}
+
+.custom-navbar .container-fluid {
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #07100e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+} /* Applies to: navbar container */
+
+/* Logo */
+.logo {
+    text-decoration: none;
+}
+
+.logo h2 {
+    color: #2AAF89;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+} /* Applies to: brand title */
+
+.logo span {
+    color: #fff;
+} /* Applies to: brand accent */
+
+.logo p {
+    color: #a9aaa3;
+    font-size: 0.55rem;
+    letter-spacing: 0.12rem;
+    margin: 0;
+    line-height: 1.2;
+} /* Applies to: small brand subtitle */
+
+/* Menu */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} /* Applies to: top navigation list */
+
+.nav-link {
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0;
+    color: #fff !important;
+    transition: color 0.3s ease;
+} /* Applies to: nav links */
+
+.nav-link:hover {
+    color: #2AAF89 !important;
+} /* Applies to: nav link hover */
+
+/* Button */
+.project-btn {
+    background: #2AAF89;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    white-space: nowrap;
+} /* Applies to: CT A project button */
+
+.project-btn:hover {
+    background: #12af94;
+    color: #fff;
+} /* Applies to: project button hover */
+
+/* Hero Section Styling */
+.hero {
+    background-color: #07100e;
+    padding-top: var(--space-xl);
+    padding-bottom: calc(var(--space-xl) - 0.5rem);
+} /* Applies to: hero wrapper */
+
+.hero-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem); /* Safer, responsive size */
+    line-height: 1.06;
+    max-width: 42rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+} /* Applies to: hero main title (responsive) */
+
+.hero-copy {
+    font-size: 1rem;
+    max-width: 36rem;
+    line-height: 1.75;
+    color: #9aa19a;
+} /* Applies to: hero paragraph copy */
+
+/* Hero two-column layout: left (big text) + right (cards) */
+.hero .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.hero .col-left {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.hero .col-right {
+    flex: 1 1 40%;
+    max-width: 40%;
+}
+
+/* accent span inside hero title */
+.hero-title .accent,
+.hero .accent {
+    color: #2AAF89; /* green accent */
+}
+
+/* Badge & Animation */
+.badge {
+    border: 0.5px solid #2AAF89 !important;
+    color: #2AAF89 !important;
+    font-size: 6px !important;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.blinking-dot {
+    display: inline-block;
+    margin-right: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Buttons Styles */
+.custom-btn-filled,
+.custom-btn-outline,
+.btn-filled,
+.btn-outlined,
+.btn-studio-accent {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    padding: 0.6rem 1rem;
+    border-radius: 0px !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+} /* Applies to: compact buttons */
+
+.custom-btn-filled {
+    background-color: #2bb38a !important;
+    border: 1px solid #2bb38a !important;
+    color: #ffffff !important;
+} /* Applies to: filled custom button */
+
+.custom-btn-filled:hover {
+    background-color: #07100e !important;
+    border-color: #ebf2f0 !important;
+} /* Applies to: filled button hover */
+
+.custom-btn-outline {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+} /* Applies to: outline custom button */
+
+.custom-btn-outline:hover {
+    background-color: #2bb38a !important;
+    border-color: #2bb38a !important;
+} /* Applies to: outline button hover */
+
+/* Right Side Cards Container */
+.cards-container {
+    max-width: 100%; /* Container for right-side cards */
+    width: 100%;
+    margin-top: var(--space-lg);
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm) !important;
+} /* Applies to: cards container */
+
+/* Top Feature Card */
+.featured-card {
+    background: linear-gradient(135deg, #0A291E 50%, #114937 100%);
+    min-height: 110px;
+    border: 1px solid rgba(22, 90, 67, 0.28);
+    width: 100% !important;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: top feature card */
+
+.card-icon-box {
+    display: block;
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+} /* Applies to: small icon container in cards */
+
+/* Agar aap emoji ki jagah FontAwesome font use kar rhe hain to ye unke color ke liye hai */
+.card-icon-box i {
+    font-size: 1.2rem;
+    opacity: 1;
+}
+
+.card-icon-featured i {
+    color: #2AAF89;
+}
+
+.card-icon-vfx i {
+    color: #5b8cff;
+}
+
+.card-icon-cgi i {
+    color: #f1c40f;
+}
+
+.card-sub {
+    font-size: 6px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    color: #146B4D !important;
+    font-weight: bold;
+} /* Applies to: small card subtitle */
+
+.card-title {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+} /* Applies to: card title */
+
+.card-desc {
+    font-size: 8px;
+    line-height: 1.2;
+} /* Applies to: card description */
+
+/* Bottom Row Cards */
+.bottom-cards-row {
+    width: 100% !important;
+    /* margin-top: 0px !important;
+    display: flex !important;
+    gap: 8px !important;  */
+}
+
+
+.vfx-card {
+    background: linear-gradient(135deg, #121628 40%, #101D35 60%);
+    min-height: 105px;
+    border: 0px solid rgba(15, 37, 67, 0.1);
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: VFX small card */
+
+.vfx-card .card-icon-box,
+.cgi-card .card-icon-box {
+    height: 16px;
+} /* Applies to: card icon height */
+
+.cgi-card {
+    background: linear-gradient(135deg, #321C00 40%, #532D00 110%);
+    min-height: 105px;
+    border: none #532D00 !important;
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: CGI small card */
+
+
+.featured-card, .vfx-card, .cgi-card {
+    will-change: transform;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    width: 100% !important;
+} /* Applies to: all card types common settings */
+
+.featured-card *, .vfx-card *, .cgi-card * {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+} /* Applies to: children of cards */
+
+.featured-card:hover, .vfx-card:hover, .cgi-card:hover {
+    transform: translate3d(0, -6px, 0);
+    box-shadow: 0 12px 24px rgba(7, 84, 29, 0.25);
+} /* Applies to: card hover */
+.card-heading-small {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+} /* Applies to: small card heading */
+
+.card-desc-small {
+    font-size: 8px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+} /* Applies to: small card description */
+
+/* --- Stats Counter Section Styles --- */
+.stats-section {
+    background-color: #07100e;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-box {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+    color: #2AAF89;
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem); /* Reduced, still prominent */
+    font-weight: 700;
+    line-height: 1.0;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    color: #7a8a83;
+    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* Stats row layout to match screenshot */
+.stats-row {
+    display: flex;
+    gap: 0;
+    width: 100%;
+}
+
+.stat-box {
+    flex: 1 1 0;
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+.stat-box:last-child {
+    border-right: none;
+}
+
+.stat-box:last-child {
+    border-bottom: none;
+}
+
+@media(min-width: 768px) {
+    .stat-box {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+    }
+
+    .stat-box:last-child {
+        border-right: none;
+    }
+}
+
+/* Mobile Adjustments */
+@media(max-width:991px) {
+    .custom-navbar .container-fluid {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .project-btn,
+    .custom-btn-filled,
+    .custom-btn-outline {
+        margin-top: 10px;
+        font-size: 7px;
+        padding: 5px 12px;
+    }
+
+    .badge {
+        font-size: 5px !important;
+    }
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Duplicate hero rules removed (consolidated earlier) */
+
+.custom-navbar .container-fluid {
+    padding: var(--space-sm) var(--space-md);
+}
+
+.logo h2 {
+    font-size: 1.15rem;
+}
+
+.logo p {
+    font-size: 0.55rem;
+    letter-spacing: 0.12rem;
+}
+
+.nav-link {
+    font-size: 0.75rem;
+}
+
+.project-btn,
+.custom-btn-filled,
+.custom-btn-outline {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    white-space: nowrap;
+}
+
+.cards-container {
+   max-width: 100%; /* Fixed rem/px max-width hata di taaki zoom levels par limit na ho */
+    width: 100%;
+    margin-top: var(--space-lg);
+    display: grid !important; /* Flex-direction se d-flex ko hata kar grid layout kiya */
+    grid-template-columns: repeat(2, 1fr); /* 2 Barabar columns lock kiye */
+    gap: var(--space-sm) !important; /* Uniform horizontal aur vertical gap */
+}
+
+.cards-container > div:nth-child(1) {
+    grid-column: span 2; /* Yeh automatic dono columns ke barabar space lega */
+    width: 100% !important; /* Width automatic system par lock kari */
+}
+
+.featured-card {
+   background: linear-gradient(135deg, #0A291E 50%, #114937 100%);
+    min-height: 110px;
+    border: 1px solid rgba(22, 90, 67, 0.28);
+    width: 100% !important; /* Width automatic system par lock kari */
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    white: 100% !important; /* Width automatic system par lock kari */
+}
+
+.vfx-card,
+.cgi-card {
+    min-height: 105px;
+    padding: 0.9rem;
+
+}
+
+.card-title {
+    font-size: 10px;
+}
+
+.card-desc,
+.card-desc-small {
+    font-size: 8px;
+}
+
+.card-heading-small {
+    font-size: 10px;
+}
+
+.card-sub {
+    font-size: 6px;
+}
+
+.stat-number {
+    /* kept for backward compatibility; final size defined above */
+    font-size: clamp(2rem, 5.6vw, 3.2rem);
+    color: #2AAF89;
+    font-weight: 800;
+}
+
+.stat-label {
+    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    color: #7a8a83;
+}
+
+.imack-card-box {
+    min-height: clamp(10rem, 18vw, 12rem);
+    padding: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.imack-title {
+    font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+}
+
+.imack-desc {
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+}
+
+.imack-tag {
+    font-size: clamp(0.38rem, 0.7vw, 0.45rem);
+}
+
+.project-card {
+    padding: clamp(0.9rem, 1.8vw, 1.2rem);
+    min-height: clamp(10rem, 18vw, 12rem);
+}
+
+.big-card {
+    min-height: clamp(16rem, 24vw, 22rem);
+    height: auto;
+}
+
+.small-card {
+    min-height: clamp(8rem, 14vw, 10rem);
+    height: auto;
+}
+
+@media (max-width: 991px) {
+    .hero .row {
+        flex-direction: column;
+    }
+
+    .hero .col-lg-6 {
+        width: 100%;
+    }
+
+    .hero .cards-panel {
+        justify-content: center !important;
+    }
+
+    .cards-container {
+        margin-inline: auto;
+        max-width: 100%;
+    }
+
+    /* .bottom-cards-row {
+      grid-column: span 2;
+    width: 100%;
+    margin-top: 0px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: var(--space-sm) !important;
+    } */
+
+    .card-half-width {
+        width: 100% !important;
+    }
+
+    .hero .mt-4.d-flex {
+        flex-wrap: wrap;
+    }
+
+    .custom-navbar .container-fluid {
+        flex-wrap: wrap;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 20px;
+        padding-bottom: 28px;
+    }
+
+    .hero .mt-4.d-flex {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .custom-btn-filled,
+    .custom-btn-outline,
+    .project-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cards-container {
+        margin-top: 1.2rem;
+    }
+
+   
+   
+
+    .imack-card-box {
+        min-height: auto;
+    }
+
+    .imack-tags-wrapper {
+        gap: 4px;
+    }
+
+    .project-card {
+        min-height: 9rem;
+    }
+
+    .big-card {
+        min-height: 13rem;
+    }
+
+    .stat-box {
+        padding: 16px 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo h2 {
+        font-size: 0.95rem;
+    }
+
+    .logo p {
+        letter-spacing: 0.12rem;
+    }
+
+    .custom-navbar .container-fluid {
+        padding: 0.65rem 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-copy {
+        font-size: 0.76rem;
+    }
+
+    .badge {
+        font-size: 0.5rem !important;
+        padding: 0.25rem 0.45rem;
+    }
+
+    .project-card {
+        padding: 0.8rem;
+    }
+
+    .card-title-text {
+        font-size: 0.85rem;
+    }
+
+    .card-year {
+        font-size: 0.55rem;
+    }
+}
+
+
+/*IMACK SERVICES GRID STYLES */
+.imack-card-box {
+    background: #0D1A15; 
+    border: 1px solid rgba(42, 175, 137, 0.1);
+    
+    padding: 18px;       
+    min-height: 160px;     
+    height: 100%;        
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease, border-color 0.3s ease, 
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    will-change: transform, background-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Shift specific service card slightly right on large screens */
+.shift-right {
+    transition: transform 0.25s ease;
+}
+
+@media (min-width: 992px) {
+    .shift-right {
+        transform: translateX(28px);
+    }
+}
+
+@media (max-width: 991px) {
+    .shift-right {
+        transform: none; /* reset on smaller screens */
+    }
+}
+
+/* Inside element settings */
+.imack-card-box * {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Top Row: Icon and Number spacing */
+.imack-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px !important; /* Space thoda tight kiya height balance karne ke liye */
+}
+
+.imack-icon {
+    font-size: 1.4rem;
+}
+
+.imack-number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2aaf89;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+/* Headings and Descriptions */
+.imack-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px; /* 10px se 8px kiya */
+    text-align: left;
+    letter-spacing: -0.2px;
+}
+
+.imack-desc {
+    font-size: 0.62rem;
+    color: #7A7F7B; 
+    line-height: 1.5;
+    margin-bottom: 10px; /* 12px se 10px kiya */
+    text-align: left;
+}
+
+/* Tags layout lock on bottom */
+.imack-tags-wrapper {
+    margin-top: auto !important; /* Gap bhi bana rahega aur height bhi kam rahegi */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.imack-tag {
+    font-size: 0.38rem;
+    font-weight: 400;
+    color: #2aaf89;
+    border: 1px solid rgba(42, 175, 137, 0.25);
+    padding: 2px 6px;
+    border-radius: 1px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* Clean, Premium Hover Effect With Background Change */
+.imack-card-box:hover {
+    background-color: #122A21 !important;        /* Cursor jaane par background color ye ho jayega */
+    border-color: rgba(42, 175, 137, 0.35) !important; /* Border thodi glow karegi */
+         
+}
+/* --- Projects Gallery Styles --- */
+.projects-gallery-section {
+    background-color: #07100e;
+}
+
+/* =======================================================
+   FINAL FAIL-PROOF FIX: ONLY BACKGROUND SCALES, TEXT IS FREEZED
+   ======================================================= */
+.project-card {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden; /* Yeh lagana zaroori hai taaki bada hota hua background card se bahar na nikle */
+    cursor: pointer;
+    border-radius: 1px;
+    border: 2px solid #07100e !important;
+    
+    /* Hover par shadow aur z-index badhega, scale HATA diya yahan se */
+    transition: box-shadow 0.3s ease, z-index 0.3s ease;
+    z-index: 1;
+}
+
+/* Ek fake layer jo card ke background ka kaam karegi */
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1; /* Yeh gradients ko piche rakhega */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+}
+
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.big-card {
+    height: 70%;
+    min-height: 325px;
+}
+
+.small-card {
+    height: 160px;
+}
+
+/* === HOVER EFFECT (Text 1mm bhi nahi hilega) === */
+.project-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); 
+    z-index: 10; 
+}
+
+/* Hover karne par sirf piche ka rang/gradient bada hoga */
+.project-card:hover::before {
+    transform: scale(1.05); /* 1.03 se thoda badha diya taaki mast dynamic look aaye */
+}
+
+/* TEXT AUR ICON KO BACKGROUND KE UPAR RAKHNA */
+.card-info, .center-icon {
+    position: relative;
+    z-index: 2; /* Background layer (z-index: 1) ke upar text ko lock kiya */
+    pointer-events: none;
+}
+
+.center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.12);
+}
+
+.small-card .center-icon {
+    font-size: 2.5rem;
+}
+
+.big-card .center-icon {
+    font-size: 4.5rem;
+}
+
+/* Card Typography */
+.card-category {
+    color: #2AAF89;
+    font-size: 6px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-title-text {
+    color: #fffbfb;
+    font-size: 10px;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+}
+
+.big-card .card-title-text {
+    font-size: 18px;
+}
+
+.card-year {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 6px;
+    display: block;
+}
+.card-green::before  { background: linear-gradient(135deg, #092e1e 20%, #051a11 100%); }
+.card-purple::before { background: linear-gradient(135deg, #2b0e43 0%, #11051c 100%); }
+.card-gold::before   { background: linear-gradient(135deg, #4d3807 0%, #211702 100%); }
+.card-blue::before   { background: linear-gradient(135deg, #0a263d 0%, #03101c 100%); }
+.card-red::before    { background: linear-gradient(135deg, #441111 0%, #1c0505 100%); }
+
+.studio-custom-section .row {
+    height: 300px !important;
+    align-items: stretch;
+}
+.studio-custom-section {
+    margin-top: 2px !important;
+    padding-top: 2px !important;
+}
+.studio-about-box {
+    background-color: #0D1A15;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 1px;
+    padding: 40px !important;
+}
+/* Right Master Box  */
+.studio-features-container {
+    background-color: #0A150F;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 1px;
+    justify-content: center !important;
+}
+
+.studio-feature-card {
+    background-color: #0C2018;
+    border: 1px solid rgba(42, 175, 137, 0.12);
+    border-radius: 3px;
+    padding: 10px 15px !important;
+}
+/* Texts Controllers */
+.studio-desc {
+    color: #8fa09a !important;
+    font-size: 8px !important;
+    line-height: 1.4;
+}
+.studio-tag {
+    color: #2AAF89;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+.main-heading-custom {
+    font-size: 26px !important;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+.btn-studio-accent {
+    background-color: #2AAF89 !important;
+    color: #07100e !important;
+    font-size: 8px !important;
+    letter-spacing: 1.5px;
+    padding: 8px 20px !important;
+    border-radius: 2px !important;
+    border: none;
+}
+.studio-icon-box {
+    color: #2AAF89;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+}
+.studio-feature-card h6 {
+    font-size: 11.5px !important;
+    letter-spacing: 0.2px;
+    margin-bottom: 2px !important;
+}
+/* Responsive Fixes */
+@media(max-width: 767px) {
+    .main-heading-custom {
+        font-size: 20px !important;
+    }
+
+    .studio-about-box,
+    .studio-features-container {
+        padding: 30px !important;
+    }
+}
+
+
+/* ==START FOUNDERS  == */
+.imack-founders-wrapper,
+.imack-founders-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.imack-founders-wrapper .founders-section {
+    background-color: #0A1510; 
+    color: #ffffff;
+    padding: 45px 10px; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; 
+}
+.imack-founders-wrapper .container {
+    max-width: 1100px;
+    width: 90%; 
+    margin: 0 auto;
+}
+
+/* Headings */
+.imack-founders-wrapper .subtitle {
+    color: #2AAF89; 
+    font-size: 0.52rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.imack-founders-wrapper .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px; 
+    color: #ffffff;
+}
+
+/* Grid Layout for Cards */
+.imack-founders-wrapper .founders-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px; 
+}
+
+ .imack-founders-wrapper .founder-card {
+    background-color: #0D1A15; 
+    border: 1px solid #1a2e26;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    min-height: auto; 
+}
+
+
+.imack-founders-wrapper .avatar-container {
+    flex-shrink: 0;
+}
+
+/* Gola Layout */
+.imack-founders-wrapper .avatar-placeholder {
+    width: 70px;         
+    height: 70px;        
+    border: 2px solid #205040;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;   
+    background-color: #0D1A15;
+    margin-top: 30px;     
+    overflow: hidden;    
+}
+
+/* Image scaling */
+.imack-founders-wrapper .avatar-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Text inside cards */
+.imack-founders-wrapper .founder-info h3 {
+    font-size: 1.0rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.imack-founders-wrapper .designation {
+    color:#1AA189; 
+    font-size: 0.40rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.imack-founders-wrapper .bio {
+    color: #7A817F; 
+    font-size: 0.6rem; 
+    line-height: 1.5; 
+    margin-top: 2px;
+}
+
+
+@media (max-width: 768px) {
+    .imack-founders-wrapper .founders-section {
+        margin-top: 40px; /* Mobile par upar ka gap thoda kam kiya */
+        padding: 40px 20px; 
+    }
+    .imack-founders-wrapper .founders-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+/* == END:  FOUNDERS  == */
+
+.custom-footer-wrapper {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.custom-container {
+    max-width: 1300px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 0 auto;
+}
+
+/* --- 1. Slim Green Box --- */
+.custom-cta-banner {
+    background-color: #2AAF89;
+    padding: 28px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.banner-heading {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.banner-subtext {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Compact Buttons */
+.btn-filled,
+.btn-outlined {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 0px !important;
+    display: inline-block;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-filled {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid transparent !important;
+}
+
+.btn-filled:hover {
+    background-color: transparent !important;
+    color: #CAE7CB !important;
+    border: 1px solid #ffffff !important;
+}
+
+.btn-outlined {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.btn-outlined:hover {
+    background-color: #ffffff !important;
+    color: #2cb68f !important;
+    border: 1px solid #ffffff !important;
+}
+
+/* --- 2. Compact Black Footer --- */
+.custom-black-footer {
+    background-color: #070707;
+    padding: 28px 0;
+    width: 100%;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo .accent-color {
+    color: #2cb68f;
+}
+
+.footer-copyright {
+    color: #444444;
+    font-size: 6px;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Fixed Footer Links wrap issue */
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Overrides */
+@media (max-width: 767px) {
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .btn-wrapper {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-wrapper {
+        flex-direction: column;
+    }
+
+    .btn-filled,
+    .btn-outlined {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+///*23456789*//
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #07100e;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+} /* Applies to: page body */
+
+:root {
+    --space-xs: 0.4rem;
+    --space-sm: 0.75rem;
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --container-max: 1400px;
+}
+
+
+html, body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 512 512'%3E%3Cpath d='M16 16L240 496L314.3 323.7L496 240L16 16Z' fill='%231f8265'/%3E%3Cpath d='M16 16L240 496L314.3 323.7L16 16Z' fill='%232AAF89'/%3E%3C/svg%3E") 1 1, auto !important;
+} /* Applies to: html and body cursor */
+
+.interactive-cursor,
+.project-btn,
+.custom-btn-filled,
+.custom-btn-outline,
+.btn-filled,
+.btn-outlined,
+.btn-studio-accent,
+.featured-card,
+.vfx-card,
+.cgi-card,
+.project-card,
+.service-card-custom,
+.studio-feature-card {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512'%3E%3Cpath d='M16 16L240 496L314.3 323.7L496 240L16 16Z' fill='%23249474'/%3E%3Cpath d='M16 16L240 496L314.3 323.7L16 16Z' fill='%2336cb9f'/%3E%3C/svg%3E") 1 1, pointer !important;
+} /* Applies to: interactive elements cursor */
+
+
+.container-fluid {
+    max-width: 1400px !important;
+    margin: 0 auto;
+}
+/* Navbar */
+.custom-navbar {
+    background: #07100e;
+    padding: 8px 0;
+}
+
+.custom-navbar .container-fluid {
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #07100e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+} /* Applies to: navbar container */
+
+/* Logo */
+.logo {
+    text-decoration: none;
+}
+
+.logo h2 {
+    color: #2AAF89;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+} /* Applies to: brand title */
+
+.logo span {
+    color: #fff;
+} /* Applies to: brand accent */
+
+.logo p {
+    color: #a9aaa3;
+    font-size: 0.55rem;
+    letter-spacing: 0.12rem;
+    margin: 0;
+    line-height: 1.2;
+} /* Applies to: small brand subtitle */
+
+/* Menu */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} /* Applies to: top navigation list */
+
+.nav-link {
+    text-decoration: none;
+    font-size: 0.20rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0;
+    color: #fff !important;
+    transition: color 0.3s ease;
+} /* Applies to: nav links */
+
+.nav-link:hover {
+    color: #2AAF89 !important;
+} /* Applies to: nav link hover */
+
+/* Button */
+.project-btn {
+    background: #2AAF89;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    white-space: nowrap;
+} /* Applies to: CT A project button */
+
+.project-btn:hover {
+    background: #12af94;
+    color: #fff;
+} /* Applies to: project button hover */
+
+/* Hero Section Styling */
+.hero {
+    background-color: #07100e;
+    padding-top: var(--space-xl);
+    padding-bottom: calc(var(--space-xl) - 0.5rem);
+} /* Applies to: hero wrapper */
+
+.hero-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem); /* Safer, responsive size */
+    line-height: 1.06;
+    max-width: 42rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+} /* Applies to: hero main title (responsive) */
+
+.hero-copy {
+    font-size: 1rem;
+    max-width: 36rem;
+    line-height: 1.75;
+    color: #9aa19a;
+} /* Applies to: hero paragraph copy */
+
+/* Hero two-column layout: left (big text) + right (cards) */
+.hero .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.hero .col-left {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.hero .col-right {
+    flex: 1 1 40%;
+    max-width: 40%;
+}
+
+/* accent span inside hero title */
+.hero-title .accent,
+.hero .accent {
+    color: #2AAF89; /* green accent */
+}
+
+/* Badge & Animation */
+.badge {
+    border: 0.5px solid #2AAF89 !important;
+    color: #2AAF89 !important;
+    font-size: 6px !important;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.blinking-dot {
+    display: inline-block;
+    margin-right: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Buttons Styles */
+.custom-btn-filled,
+.custom-btn-outline,
+.btn-filled,
+.btn-outlined,
+.btn-studio-accent {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    padding: 0.6rem 1rem;
+    border-radius: 0px !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+} /* Applies to: compact buttons */
+
+.custom-btn-filled {
+    background-color: #2bb38a !important;
+    border: 1px solid #2bb38a !important;
+    color: #ffffff !important;
+} /* Applies to: filled custom button */
+
+.custom-btn-filled:hover {
+    background-color: #07100e !important;
+    border-color: #ebf2f0 !important;
+} /* Applies to: filled button hover */
+
+.custom-btn-outline {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+} /* Applies to: outline custom button */
+
+.custom-btn-outline:hover {
+    background-color: #2bb38a !important;
+    border-color: #2bb38a !important;
+} /* Applies to: outline button hover */
+
+/* Right Side Cards Container */
+.cards-container {
+    max-width: 100%; /* Container for right-side cards */
+    width: 100%;
+    margin-top: var(--space-lg);
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm) !important;
+} /* Applies to: cards container */
+
+/* Top Feature Card */
+.featured-card {
+    background: linear-gradient(135deg, #0A291E 50%, #114937 100%);
+    min-height: 110px;
+    border: 1px solid rgba(22, 90, 67, 0.28);
+    width: 100% !important;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: top feature card */
+
+.card-icon-box {
+    display: block;
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+} /* Applies to: small icon container in cards */
+
+/* Agar aap emoji ki jagah FontAwesome font use kar rhe hain to ye unke color ke liye hai */
+.card-icon-box i {
+    font-size: 1.2rem;
+    opacity: 1;
+}
+
+.card-icon-featured i {
+    color: #2AAF89;
+}
+
+.card-icon-vfx i {
+    color: #5b8cff;
+}
+
+.card-icon-cgi i {
+    color: #f1c40f;
+}
+
+.card-sub {
+    font-size: 6px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    color: #146B4D !important;
+    font-weight: bold;
+} /* Applies to: small card subtitle */
+
+.card-title {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+} /* Applies to: card title */
+
+.card-desc {
+    font-size: 8px;
+    line-height: 1.2;
+} /* Applies to: card description */
+
+/* Bottom Row Cards */
+.bottom-cards-row {
+    width: 100% !important;
+    /* margin-top: 0px !important;
+    display: flex !important;
+    gap: 8px !important;  */
+}
+
+
+.vfx-card {
+    background: linear-gradient(135deg, #121628 40%, #101D35 60%);
+    min-height: 105px;
+    border: 0px solid rgba(15, 37, 67, 0.1);
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: VFX small card */
+
+.vfx-card .card-icon-box,
+.cgi-card .card-icon-box {
+    height: 16px;
+} /* Applies to: card icon height */
+
+.cgi-card {
+    background: linear-gradient(135deg, #321C00 40%, #532D00 110%);
+    min-height: 105px;
+    border: none #532D00 !important;
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: CGI small card */
+
+
+.featured-card, .vfx-card, .cgi-card {
+    will-change: transform;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    width: 100% !important;
+} /* Applies to: all card types common settings */
+
+.featured-card *, .vfx-card *, .cgi-card * {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+} /* Applies to: children of cards */
+
+.featured-card:hover, .vfx-card:hover, .cgi-card:hover {
+    transform: translate3d(0, -6px, 0);
+    box-shadow: 0 12px 24px rgba(7, 84, 29, 0.25);
+} /* Applies to: card hover */
+.card-heading-small {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+} /* Applies to: small card heading */
+
+.card-desc-small {
+    font-size: 8px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+} /* Applies to: small card description */
+
+/* --- Stats Counter Section Styles --- */
+.stats-section {
+    background-color: #07100e;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-box {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+    color: #2AAF89;
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem); /* Reduced, still prominent */
+    font-weight: 700;
+    line-height: 1.0;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    color: #7a8a83;
+    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* Stats row layout to match screenshot */
+.stats-row {
+    display: flex;
+    gap: 0;
+    width: 100%;
+}
+
+.stat-box {
+    flex: 1 1 0;
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+.stat-box:last-child {
+    border-right: none;
+}
+
+.stat-box:last-child {
+    border-bottom: none;
+}
+
+@media(min-width: 768px) {
+    .stat-box {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+    }
+
+    .stat-box:last-child {
+        border-right: none;
+    }
+}
+
+/* Mobile Adjustments */
+@media(max-width:991px) {
+    .custom-navbar .container-fluid {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .project-btn,
+    .custom-btn-filled,
+    .custom-btn-outline {
+        margin-top: 10px;
+        font-size: 7px;
+        padding: 5px 12px;
+    }
+
+    .badge {
+        font-size: 5px !important;
+    }
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Duplicate hero rules removed (consolidated earlier) */
+
+.custom-navbar .container-fluid {
+    padding: var(--space-sm) var(--space-md);
+}
+
+.logo h2 {
+    font-size: 1.15rem;
+}
+
+.logo p {
+    font-size: 0.55rem;
+    letter-spacing: 0.12rem;
+}
+
+.nav-link {
+    font-size: 0.75rem;
+}
+
+.project-btn,
+.custom-btn-filled,
+.custom-btn-outline {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    white-space: nowrap;
+}
+
+.cards-container {
+   max-width: 100%; /* Fixed rem/px max-width hata di taaki zoom levels par limit na ho */
+    width: 100%;
+    margin-top: var(--space-lg);
+    display: grid !important; /* Flex-direction se d-flex ko hata kar grid layout kiya */
+    grid-template-columns: repeat(2, 1fr); /* 2 Barabar columns lock kiye */
+    gap: var(--space-sm) !important; /* Uniform horizontal aur vertical gap */
+}
+
+.cards-container > div:nth-child(1) {
+    grid-column: span 2; /* Yeh automatic dono columns ke barabar space lega */
+    width: 100% !important; /* Width automatic system par lock kari */
+}
+
+.featured-card {
+   background: linear-gradient(135deg, #0A291E 50%, #114937 100%);
+    min-height: 110px;
+    border: 1px solid rgba(22, 90, 67, 0.28);
+    width: 100% !important; /* Width automatic system par lock kari */
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    white: 100% !important; /* Width automatic system par lock kari */
+}
+
+.vfx-card,
+.cgi-card {
+    min-height: 105px;
+    padding: 0.9rem;
+
+}
+
+.card-title {
+    font-size: 10px;
+}
+
+.card-desc,
+.card-desc-small {
+    font-size: 8px;
+}
+
+.card-heading-small {
+    font-size: 10px;
+}
+
+.card-sub {
+    font-size: 6px;
+}
+
+.stat-number {
+    /* kept for backward compatibility; final size defined above */
+    font-size: clamp(2rem, 5.6vw, 3.2rem);
+    color: #2AAF89;
+    font-weight: 800;
+}
+
+.stat-label {
+    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    color: #7a8a83;
+}
+
+.imack-card-box {
+    min-height: clamp(10rem, 18vw, 12rem);
+    padding: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.imack-title {
+    font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+}
+
+.imack-desc {
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+}
+
+.imack-tag {
+    font-size: clamp(0.38rem, 0.7vw, 0.45rem);
+}
+
+.project-card {
+    padding: clamp(0.9rem, 1.8vw, 1.2rem);
+    min-height: clamp(10rem, 18vw, 12rem);
+}
+
+.big-card {
+    min-height: clamp(16rem, 24vw, 22rem);
+    height: auto;
+}
+
+.small-card {
+    min-height: clamp(8rem, 14vw, 10rem);
+    height: auto;
+}
+
+@media (max-width: 991px) {
+    .hero .row {
+        flex-direction: column;
+    }
+
+    .hero .col-lg-6 {
+        width: 100%;
+    }
+
+    .hero .cards-panel {
+        justify-content: center !important;
+    }
+
+    .cards-container {
+        margin-inline: auto;
+        max-width: 100%;
+    }
+
+    /* .bottom-cards-row {
+      grid-column: span 2;
+    width: 100%;
+    margin-top: 0px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: var(--space-sm) !important;
+    } */
+
+    .card-half-width {
+        width: 100% !important;
+    }
+
+    .hero .mt-4.d-flex {
+        flex-wrap: wrap;
+    }
+
+    .custom-navbar .container-fluid {
+        flex-wrap: wrap;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 20px;
+        padding-bottom: 28px;
+    }
+
+    .hero .mt-4.d-flex {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .custom-btn-filled,
+    .custom-btn-outline,
+    .project-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cards-container {
+        margin-top: 1.2rem;
+    }
+
+   
+   
+
+    .imack-card-box {
+        min-height: auto;
+    }
+
+    .imack-tags-wrapper {
+        gap: 4px;
+    }
+
+    .project-card {
+        min-height: 9rem;
+    }
+
+    .big-card {
+        min-height: 13rem;
+    }
+
+    .stat-box {
+        padding: 16px 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo h2 {
+        font-size: 0.95rem;
+    }
+
+    .logo p {
+        letter-spacing: 0.12rem;
+    }
+
+    .custom-navbar .container-fluid {
+        padding: 0.65rem 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-copy {
+        font-size: 0.76rem;
+    }
+
+    .badge {
+        font-size: 0.5rem !important;
+        padding: 0.25rem 0.45rem;
+    }
+
+    .project-card {
+        padding: 0.8rem;
+    }
+
+    .card-title-text {
+        font-size: 0.85rem;
+    }
+
+    .card-year {
+        font-size: 0.55rem;
+    }
+}
+
+
+/*IMACK SERVICES GRID STYLES */
+.imack-card-box {
+    background: #0D1A15; 
+    border: 1px solid rgba(42, 175, 137, 0.1);
+    
+    padding: 18px;       
+    min-height: 160px;     
+    height: 100%;        
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease, border-color 0.3s ease, 
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    will-change: transform, background-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Shift specific service card slightly right on large screens */
+.shift-right {
+    transition: transform 0.25s ease;
+}
+
+@media (min-width: 992px) {
+    .shift-right {
+        transform: translateX(28px);
+    }
+}
+
+@media (max-width: 991px) {
+    .shift-right {
+        transform: none; /* reset on smaller screens */
+    }
+}
+
+/* Inside element settings */
+.imack-card-box * {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Top Row: Icon and Number spacing */
+.imack-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px !important; /* Space thoda tight kiya height balance karne ke liye */
+}
+
+.imack-icon {
+    font-size: 1.4rem;
+}
+
+.imack-number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2aaf89;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+/* Headings and Descriptions */
+.imack-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px; /* 10px se 8px kiya */
+    text-align: left;
+    letter-spacing: -0.2px;
+}
+
+.imack-desc {
+    font-size: 0.62rem;
+    color: #7A7F7B; 
+    line-height: 1.5;
+    margin-bottom: 10px; /* 12px se 10px kiya */
+    text-align: left;
+}
+
+/* Tags layout lock on bottom */
+.imack-tags-wrapper {
+    margin-top: auto !important; /* Gap bhi bana rahega aur height bhi kam rahegi */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.imack-tag {
+    font-size: 0.38rem;
+    font-weight: 400;
+    color: #2aaf89;
+    border: 1px solid rgba(42, 175, 137, 0.25);
+    padding: 2px 6px;
+    border-radius: 1px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* Clean, Premium Hover Effect With Background Change */
+.imack-card-box:hover {
+    background-color: #122A21 !important;        /* Cursor jaane par background color ye ho jayega */
+    border-color: rgba(42, 175, 137, 0.35) !important; /* Border thodi glow karegi */
+         
+}
+/* --- Projects Gallery Styles --- */
+.projects-gallery-section {
+    background-color: #07100e;
+}
+
+/* =======================================================
+   FINAL FAIL-PROOF FIX: ONLY BACKGROUND SCALES, TEXT IS FREEZED
+   ======================================================= */
+.project-card {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden; /* Yeh lagana zaroori hai taaki bada hota hua background card se bahar na nikle */
+    cursor: pointer;
+    border-radius: 1px;
+    border: 2px solid #07100e !important;
+    
+    /* Hover par shadow aur z-index badhega, scale HATA diya yahan se */
+    transition: box-shadow 0.3s ease, z-index 0.3s ease;
+    z-index: 1;
+}
+
+/* Ek fake layer jo card ke background ka kaam karegi */
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1; /* Yeh gradients ko piche rakhega */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+}
+
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.big-card {
+    height: 70%;
+    min-height: 325px;
+}
+
+.small-card {
+    height: 160px;
+}
+
+/* === HOVER EFFECT (Text 1mm bhi nahi hilega) === */
+.project-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); 
+    z-index: 10; 
+}
+
+/* Hover karne par sirf piche ka rang/gradient bada hoga */
+.project-card:hover::before {
+    transform: scale(1.05); /* 1.03 se thoda badha diya taaki mast dynamic look aaye */
+}
+
+/* TEXT AUR ICON KO BACKGROUND KE UPAR RAKHNA */
+.card-info, .center-icon {
+    position: relative;
+    z-index: 2; /* Background layer (z-index: 1) ke upar text ko lock kiya */
+    pointer-events: none;
+}
+
+.center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.12);
+}
+
+.small-card .center-icon {
+    font-size: 2.5rem;
+}
+
+.big-card .center-icon {
+    font-size: 4.5rem;
+}
+
+/* Card Typography */
+.card-category {
+    color: #2AAF89;
+    font-size: 6px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-title-text {
+    color: #fffbfb;
+    font-size: 10px;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+}
+
+.big-card .card-title-text {
+    font-size: 18px;
+}
+
+.card-year {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 6px;
+    display: block;
+}
+.card-green::before  { background: linear-gradient(135deg, #092e1e 20%, #051a11 100%); }
+.card-purple::before { background: linear-gradient(135deg, #2b0e43 0%, #11051c 100%); }
+.card-gold::before   { background: linear-gradient(135deg, #4d3807 0%, #211702 100%); }
+.card-blue::before   { background: linear-gradient(135deg, #0a263d 0%, #03101c 100%); }
+.card-red::before    { background: linear-gradient(135deg, #441111 0%, #1c0505 100%); }
+
+.studio-custom-section .row {
+    height: 300px !important;
+    align-items: stretch;
+}
+.studio-custom-section {
+    margin-top: 2px !important;
+    padding-top: 2px !important;
+}
+.studio-about-box {
+    background-color: #0D1A15;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 1px;
+    padding: 40px !important;
+}
+/* Right Master Box  */
+.studio-features-container {
+    background-color: #0A150F;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 1px;
+    justify-content: center !important;
+}
+
+.studio-feature-card {
+    background-color: #0C2018;
+    border: 1px solid rgba(42, 175, 137, 0.12);
+    border-radius: 3px;
+    padding: 10px 15px !important;
+}
+/* Texts Controllers */
+.studio-desc {
+    color: #8fa09a !important;
+    font-size: 8px !important;
+    line-height: 1.4;
+}
+.studio-tag {
+    color: #2AAF89;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+.main-heading-custom {
+    font-size: 26px !important;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+.btn-studio-accent {
+    background-color: #2AAF89 !important;
+    color: #07100e !important;
+    font-size: 8px !important;
+    letter-spacing: 1.5px;
+    padding: 8px 20px !important;
+    border-radius: 2px !important;
+    border: none;
+}
+.studio-icon-box {
+    color: #2AAF89;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+}
+.studio-feature-card h6 {
+    font-size: 11.5px !important;
+    letter-spacing: 0.2px;
+    margin-bottom: 2px !important;
+}
+/* Responsive Fixes */
+@media(max-width: 767px) {
+    .main-heading-custom {
+        font-size: 20px !important;
+    }
+
+    .studio-about-box,
+    .studio-features-container {
+        padding: 30px !important;
+    }
+}
+
+
+/* ==START FOUNDERS  == */
+.imack-founders-wrapper,
+.imack-founders-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.imack-founders-wrapper .founders-section {
+    background-color: #0A1510; 
+    color: #ffffff;
+    padding: 45px 10px; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; 
+}
+.imack-founders-wrapper .container {
+    max-width: 1100px;
+    width: 90%; 
+    margin: 0 auto;
+}
+
+/* Headings */
+.imack-founders-wrapper .subtitle {
+    color: #2AAF89; 
+    font-size: 0.52rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.imack-founders-wrapper .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px; 
+    color: #ffffff;
+}
+
+/* Grid Layout for Cards */
+.imack-founders-wrapper .founders-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px; 
+}
+
+ .imack-founders-wrapper .founder-card {
+    background-color: #0D1A15; 
+    border: 1px solid #1a2e26;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    min-height: auto; 
+}
+
+
+.imack-founders-wrapper .avatar-container {
+    flex-shrink: 0;
+}
+
+/* Gola Layout */
+.imack-founders-wrapper .avatar-placeholder {
+    width: 70px;         
+    height: 70px;        
+    border: 2px solid #205040;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;   
+    background-color: #0D1A15;
+    margin-top: 30px;     
+    overflow: hidden;    
+}
+
+/* Image scaling */
+.imack-founders-wrapper .avatar-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Text inside cards */
+.imack-founders-wrapper .founder-info h3 {
+    font-size: 1.0rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.imack-founders-wrapper .designation {
+    color:#1AA189; 
+    font-size: 0.40rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.imack-founders-wrapper .bio {
+    color: #7A817F; 
+    font-size: 0.6rem; 
+    line-height: 1.5; 
+    margin-top: 2px;
+}
+
+
+@media (max-width: 768px) {
+    .imack-founders-wrapper .founders-section {
+        margin-top: 40px; /* Mobile par upar ka gap thoda kam kiya */
+        padding: 40px 20px; 
+    }
+    .imack-founders-wrapper .founders-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+/* == END:  FOUNDERS  == */
+
+.custom-footer-wrapper {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.custom-container {
+    max-width: 1300px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 0 auto;
+}
+
+/* --- 1. Slim Green Box --- */
+.custom-cta-banner {
+    background-color: #2AAF89;
+    padding: 28px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.banner-heading {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.banner-subtext {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Compact Buttons */
+.btn-filled,
+.btn-outlined {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 0px !important;
+    display: inline-block;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-filled {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid transparent !important;
+}
+
+.btn-filled:hover {
+    background-color: transparent !important;
+    color: #CAE7CB !important;
+    border: 1px solid #ffffff !important;
+}
+
+.btn-outlined {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.btn-outlined:hover {
+    background-color: #ffffff !important;
+    color: #2cb68f !important;
+    border: 1px solid #ffffff !important;
+}
+
+/* --- 2. Compact Black Footer --- */
+.custom-black-footer {
+    background-color: #070707;
+    padding: 28px 0;
+    width: 100%;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo .accent-color {
+    color: #2cb68f;
+}
+
+.footer-copyright {
+    color: #444444;
+    font-size: 6px;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Fixed Footer Links wrap issue */
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Overrides */
+@media (max-width: 767px) {
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .btn-wrapper {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-wrapper {
+        flex-direction: column;
+    }
+
+    .btn-filled,
+    .btn-outlined {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+<!-- 2 css call -->
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #07100e;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+} /* Applies to: page body */
+
+:root {
+    --space-xs: 0.4rem;
+    --space-sm: 0.75rem;
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --container-max: 1400px;
+}
+
+
+html, body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 512 512'%3E%3Cpath d='M16 16L240 496L314.3 323.7L496 240L16 16Z' fill='%231f8265'/%3E%3Cpath d='M16 16L240 496L314.3 323.7L16 16Z' fill='%232AAF89'/%3E%3C/svg%3E") 1 1, auto !important;
+} /* Applies to: html and body cursor */
+
+.interactive-cursor,
+.project-btn,
+.custom-btn-filled,
+.custom-btn-outline,
+.btn-filled,
+.btn-outlined,
+.btn-studio-accent,
+.featured-card,
+.vfx-card,
+.cgi-card,
+.project-card,
+.service-card-custom,
+.studio-feature-card {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512'%3E%3Cpath d='M16 16L240 496L314.3 323.7L496 240L16 16Z' fill='%23249474'/%3E%3Cpath d='M16 16L240 496L314.3 323.7L16 16Z' fill='%2336cb9f'/%3E%3C/svg%3E") 1 1, pointer !important;
+} /* Applies to: interactive elements cursor */
+
+
+.container-fluid {
+    max-width: 1400px !important;
+    margin: 0 auto;
+}
+/* Navbar */
+.custom-navbar {
+    background: #07100e;
+    padding: 8px 0;
+}
+
+.custom-navbar .container-fluid {
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #07100e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+} /* Applies to: navbar container */
+
+/* Logo */
+.logo {
+    text-decoration: none;
+}
+
+.logo h2 {
+    color: #2AAF89;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+} /* Applies to: brand title */
+
+.logo span {
+    color: #fff;
+} /* Applies to: brand accent */
+
+.logo p {
+    color: #a9aaa3;
+    font-size: 0.55rem;
+    letter-spacing: 0.12rem;
+    margin: 0;
+    line-height: 1.2;
+} /* Applies to: small brand subtitle */
+
+/* Menu */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} /* Applies to: top navigation list */
+
+.nav-link {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0;
+    color: #fff !important;
+    transition: color 0.3s ease;
+} /* Applies to: nav links */
+
+.nav-link:hover {
+    color: #2AAF89 !important;
+} /* Applies to: nav link hover */
+
+/* Button */
+.project-btn {
+    background: #2AAF89;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    white-space: nowrap;
+} /* Applies to: CT A project button */
+
+.project-btn:hover {
+    background: #12af94;
+    color: #fff;
+} /* Applies to: project button hover */
+
+/* Hero Section Styling */
+.hero {
+    background-color: #07100e;
+    padding-top: var(--space-xl);
+    padding-bottom: calc(var(--space-xl) - 0.5rem);
+} /* Applies to: hero wrapper */
+
+.hero-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem); /* Safer, responsive size */
+    line-height: 1.06;
+    max-width: 42rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+} /* Applies to: hero main title (responsive) */
+
+.hero-copy {
+    font-size: 1rem;
+    max-width: 36rem;
+    line-height: 1.75;
+    color: #9aa19a;
+} /* Applies to: hero paragraph copy */
+
+/* Hero two-column layout: left (big text) + right (cards) */
+.hero .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.hero .col-left {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.hero .col-right {
+    flex: 1 1 40%;
+    max-width: 40%;
+}
+
+/* accent span inside hero title */
+.hero-title .accent,
+.hero .accent {
+    color: #2AAF89; /* green accent */
+}
+
+/* Badge & Animation */
+.badge {
+    border: 0.5px solid #2AAF89 !important;
+    color: #2AAF89 !important;
+    font-size: 6px !important;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.blinking-dot {
+    display: inline-block;
+    margin-right: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Buttons Styles */
+.custom-btn-filled,
+.custom-btn-outline,
+.btn-filled,
+.btn-outlined,
+.btn-studio-accent {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    padding: 0.6rem 1rem;
+    border-radius: 0px !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+} /* Applies to: compact buttons */
+
+.custom-btn-filled {
+    background-color: #2bb38a !important;
+    border: 1px solid #2bb38a !important;
+    color: #ffffff !important;
+} /* Applies to: filled custom button */
+
+.custom-btn-filled:hover {
+    background-color: #07100e !important;
+    border-color: #ebf2f0 !important;
+} /* Applies to: filled button hover */
+
+.custom-btn-outline {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+} /* Applies to: outline custom button */
+
+.custom-btn-outline:hover {
+    background-color: #2bb38a !important;
+    border-color: #2bb38a !important;
+} /* Applies to: outline button hover */
+
+/* Right Side Cards Container */
+.cards-container {
+    max-width: 100%; /* Container for right-side cards */
+    width: 100%;
+    margin-top: var(--space-lg);
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm) !important;
+} /* Applies to: cards container */
+
+/* Top Feature Card */
+.featured-card {
+    background: linear-gradient(135deg, #0A291E 50%, #114937 100%);
+    min-height: 110px;
+    border: 1px solid rgba(22, 90, 67, 0.28);
+    width: 100% !important;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: top feature card */
+
+.card-icon-box {
+    display: block;
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+} /* Applies to: small icon container in cards */
+
+/* Agar aap emoji ki jagah FontAwesome font use kar rhe hain to ye unke color ke liye hai */
+.card-icon-box i {
+    font-size: 1.2rem;
+    opacity: 1;
+}
+
+.card-icon-featured i {
+    color: #2AAF89;
+}
+
+.card-icon-vfx i {
+    color: #5b8cff;
+}
+
+.card-icon-cgi i {
+    color: #f1c40f;
+}
+
+.card-sub {
+    font-size: 6px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    color: #146B4D !important;
+    font-weight: bold;
+} /* Applies to: small card subtitle */
+
+.card-title {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+} /* Applies to: card title */
+
+.card-desc {
+    font-size: 8px;
+    line-height: 1.2;
+} /* Applies to: card description */
+
+/* Bottom Row Cards */
+.bottom-cards-row {
+    width: 100% !important;
+    /* margin-top: 0px !important;
+    display: flex !important;
+    gap: 8px !important;  */
+}
+
+
+.vfx-card {
+    background: linear-gradient(135deg, #121628 40%, #101D35 60%);
+    min-height: 105px;
+    border: 0px solid rgba(15, 37, 67, 0.1);
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: VFX small card */
+
+.vfx-card .card-icon-box,
+.cgi-card .card-icon-box {
+    height: 16px;
+} /* Applies to: card icon height */
+
+.cgi-card {
+    background: linear-gradient(135deg, #321C00 40%, #532D00 110%);
+    min-height: 105px;
+    border: none #532D00 !important;
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+} /* Applies to: CGI small card */
+
+
+.featured-card, .vfx-card, .cgi-card {
+    will-change: transform;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    width: 100% !important;
+} /* Applies to: all card types common settings */
+
+.featured-card *, .vfx-card *, .cgi-card * {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+} /* Applies to: children of cards */
+
+.featured-card:hover, .vfx-card:hover, .cgi-card:hover {
+    transform: translate3d(0, -6px, 0);
+    box-shadow: 0 12px 24px rgba(7, 84, 29, 0.25);
+} /* Applies to: card hover */
+.card-heading-small {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+} /* Applies to: small card heading */
+
+.card-desc-small {
+    font-size: 8px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+} /* Applies to: small card description */
+
+/* --- Stats Counter Section Styles --- */
+.stats-section {
+    background-color: #07100e;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-box {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+    color: #2AAF89;
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem); /* Reduced, still prominent */
+    font-weight: 700;
+    line-height: 1.0;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    color: #7a8a83;
+    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* Stats row layout to match screenshot */
+.stats-row {
+    display: flex;
+    gap: 0;
+    width: 100%;
+}
+
+.stat-box {
+    flex: 1 1 0;
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+.stat-box:last-child {
+    border-right: none;
+}
+
+.stat-box:last-child {
+    border-bottom: none;
+}
+
+@media(min-width: 768px) {
+    .stat-box {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+    }
+
+    .stat-box:last-child {
+        border-right: none;
+    }
+}
+
+/* Mobile Adjustments */
+@media(max-width:991px) {
+    .custom-navbar .container-fluid {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .project-btn,
+    .custom-btn-filled,
+    .custom-btn-outline {
+        margin-top: 10px;
+        font-size: 7px;
+        padding: 5px 12px;
+    }
+
+    .badge {
+        font-size: 5px !important;
+    }
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Duplicate hero rules removed (consolidated earlier) */
+
+.custom-navbar .container-fluid {
+    padding: var(--space-sm) var(--space-md);
+}
+
+.logo h2 {
+    font-size: 1.15rem;
+}
+
+.logo p {
+    font-size: 0.55rem;
+    letter-spacing: 0.12rem;
+}
+
+.nav-link {
+    font-size: 0.75rem;
+}
+
+.project-btn,
+.custom-btn-filled,
+.custom-btn-outline {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    white-space: nowrap;
+}
+
+.cards-container {
+   max-width: 100%; /* Fixed rem/px max-width hata di taaki zoom levels par limit na ho */
+    width: 100%;
+    margin-top: var(--space-lg);
+    display: grid !important; /* Flex-direction se d-flex ko hata kar grid layout kiya */
+    grid-template-columns: repeat(2, 1fr); /* 2 Barabar columns lock kiye */
+    gap: var(--space-sm) !important; /* Uniform horizontal aur vertical gap */
+}
+
+.cards-container > div:nth-child(1) {
+    grid-column: span 2; /* Yeh automatic dono columns ke barabar space lega */
+    width: 100% !important; /* Width automatic system par lock kari */
+}
+
+.featured-card {
+   background: linear-gradient(135deg, #0A291E 50%, #114937 100%);
+    min-height: 110px;
+    border: 1px solid rgba(22, 90, 67, 0.28);
+    width: 100% !important; /* Width automatic system par lock kari */
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    white: 100% !important; /* Width automatic system par lock kari */
+}
+
+.vfx-card,
+.cgi-card {
+    min-height: 105px;
+    padding: 0.9rem;
+
+}
+
+.card-title {
+    font-size: 6px;
+}
+
+.card-desc,
+.card-desc-small {
+    font-size: 8px;
+}
+
+.card-heading-small {
+    font-size: 10px;
+}
+
+.card-sub {
+    font-size: 6px;
+}
+
+.stat-number {
+    /* kept for backward compatibility; final size defined above */
+    font-size: clamp(2rem, 5.6vw, 3.2rem);
+    color: #2AAF89;
+    font-weight: 800;
+}
+
+.stat-label {
+    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+    color: #7a8a83;
+}
+
+.imack-card-box {
+    min-height: clamp(10rem, 18vw, 12rem);
+    padding: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.imack-title {
+    font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+}
+
+.imack-desc {
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+}
+
+.imack-tag {
+    font-size: clamp(0.38rem, 0.7vw, 0.45rem);
+}
+
+.project-card {
+    padding: clamp(0.9rem, 1.8vw, 1.2rem);
+    min-height: clamp(10rem, 18vw, 12rem);
+}
+
+.big-card {
+    min-height: clamp(16rem, 24vw, 22rem);
+    height: auto;
+}
+
+.small-card {
+    min-height: clamp(8rem, 14vw, 10rem);
+    height: auto;
+}
+
+@media (max-width: 991px) {
+    .hero .row {
+        flex-direction: column;
+    }
+
+    .hero .col-lg-6 {
+        width: 100%;
+    }
+
+    .hero .cards-panel {
+        justify-content: center !important;
+    }
+
+    .cards-container {
+        margin-inline: auto;
+        max-width: 100%;
+    }
+
+    /* .bottom-cards-row {
+      grid-column: span 2;
+    width: 100%;
+    margin-top: 0px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: var(--space-sm) !important;
+    } */
+
+    .card-half-width {
+        width: 100% !important;
+    }
+
+    .hero .mt-4.d-flex {
+        flex-wrap: wrap;
+    }
+
+    .custom-navbar .container-fluid {
+        flex-wrap: wrap;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 20px;
+        padding-bottom: 28px;
+    }
+
+    .hero .mt-4.d-flex {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .custom-btn-filled,
+    .custom-btn-outline,
+    .project-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cards-container {
+        margin-top: 1.0rem;
+    }
+
+   
+   
+
+    .imack-card-box {
+        min-height: auto;
+    }
+
+    .imack-tags-wrapper {
+        gap: 4px;
+    }
+
+    .project-card {
+        min-height: 9rem;
+    }
+
+    .big-card {
+        min-height: 13rem;
+    }
+
+    .stat-box {
+        padding: 16px 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo h2 {
+        font-size: 0.95rem;
+    }
+
+    .logo p {
+        letter-spacing: 0.12rem;
+    }
+
+    .custom-navbar .container-fluid {
+        padding: 0.65rem 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-copy {
+        font-size: 0.76rem;
+    }
+
+    .badge {
+        font-size: 0.5rem !important;
+        padding: 0.25rem 0.45rem;
+    }
+
+    .project-card {
+        padding: 0.8rem;
+    }
+
+    .card-title-text {
+        font-size: 0.85rem;
+    }
+
+    .card-year {
+        font-size: 0.55rem;
+    }
+}
+
+
+/*IMACK SERVICES GRID STYLES */
+.imack-card-box {
+    background: #0D1A15; 
+    border: 1px solid rgba(42, 175, 137, 0.1);
+    
+    padding: 18px;       
+    min-height: 160px;     
+    height: 100%;        
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease, border-color 0.3s ease, 
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    will-change: transform, background-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Shift specific service card slightly right on large screens */
+.shift-right {
+    transition: transform 0.25s ease;
+}
+
+@media (min-width: 992px) {
+    .shift-right {
+        transform: translateX(28px);
+    }
+}
+
+@media (max-width: 991px) {
+    .shift-right {
+        transform: none; /* reset on smaller screens */
+    }
+}
+
+/* Inside element settings */
+.imack-card-box * {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Top Row: Icon and Number spacing */
+.imack-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px !important; /* Space thoda tight kiya height balance karne ke liye */
+}
+
+.imack-icon {
+    font-size: 1.4rem;
+}
+
+.imack-number {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2aaf89;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+/* Headings and Descriptions */
+.imack-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px; /* 10px se 8px kiya */
+    text-align: left;
+    letter-spacing: -0.2px;
+}
+
+.imack-desc {
+    font-size: 0.62rem;
+    color: #7A7F7B; 
+    line-height: 1.5;
+    margin-bottom: 10px; /* 12px se 10px kiya */
+    text-align: left;
+}
+
+/* Tags layout lock on bottom */
+.imack-tags-wrapper {
+    margin-top: auto !important; /* Gap bhi bana rahega aur height bhi kam rahegi */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.imack-tag {
+    font-size: 0.38rem;
+    font-weight: 400;
+    color: #2aaf89;
+    border: 1px solid rgba(42, 175, 137, 0.25);
+    padding: 2px 6px;
+    border-radius: 1px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* Clean, Premium Hover Effect With Background Change */
+.imack-card-box:hover {
+    background-color: #122A21 !important;        /* Cursor jaane par background color ye ho jayega */
+    border-color: rgba(42, 175, 137, 0.35) !important; /* Border thodi glow karegi */
+         
+}
+/* --- Projects Gallery Styles --- */
+.projects-gallery-section {
+    background-color: #07100e;
+}
+
+/* =======================================================
+   FINAL FAIL-PROOF FIX: ONLY BACKGROUND SCALES, TEXT IS FREEZED
+   ======================================================= */
+.project-card {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden; /* Yeh lagana zaroori hai taaki bada hota hua background card se bahar na nikle */
+    cursor: pointer;
+    border-radius: 1px;
+    border: 2px solid #07100e !important;
+    
+    /* Hover par shadow aur z-index badhega, scale HATA diya yahan se */
+    transition: box-shadow 0.3s ease, z-index 0.3s ease;
+    z-index: 1;
+}
+
+/* Ek fake layer jo card ke background ka kaam karegi */
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1; /* Yeh gradients ko piche rakhega */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+}
+
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.big-card {
+    height: 70%;
+    min-height: 325px;
+}
+
+.small-card {
+    height: 160px;
+}
+
+/* === HOVER EFFECT (Text 1mm bhi nahi hilega) === */
+.project-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); 
+    z-index: 10; 
+}
+
+/* Hover karne par sirf piche ka rang/gradient bada hoga */
+.project-card:hover::before {
+    transform: scale(1.05); /* 1.03 se thoda badha diya taaki mast dynamic look aaye */
+}
+
+/* TEXT AUR ICON KO BACKGROUND KE UPAR RAKHNA */
+.card-info, .center-icon {
+    position: relative;
+    z-index: 2; /* Background layer (z-index: 1) ke upar text ko lock kiya */
+    pointer-events: none;
+}
+
+.center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.12);
+}
+
+.small-card .center-icon {
+    font-size: 2.5rem;
+}
+
+.big-card .center-icon {
+    font-size: 4.5rem;
+}
+
+/* Card Typography */
+.card-category {
+    color: #2AAF89;
+    font-size: 6px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-title-text {
+    color: #fffbfb;
+    font-size: 10px;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+}
+
+.big-card .card-title-text {
+    font-size: 18px;
+}
+
+.card-year {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 6px;
+    display: block;
+}
+.card-green::before  { background: linear-gradient(135deg, #092e1e 20%, #051a11 100%); }
+.card-purple::before { background: linear-gradient(135deg, #2b0e43 0%, #11051c 100%); }
+.card-gold::before   { background: linear-gradient(135deg, #4d3807 0%, #211702 100%); }
+.card-blue::before   { background: linear-gradient(135deg, #0a263d 0%, #03101c 100%); }
+.card-red::before    { background: linear-gradient(135deg, #441111 0%, #1c0505 100%); }
+
+.studio-custom-section .row {
+    height: 300px !important;
+    align-items: stretch;
+}
+.studio-custom-section {
+    margin-top: 2px !important;
+    padding-top: 2px !important;
+}
+.studio-about-box {
+    background-color: #0D1A15;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 1px;
+    padding: 40px !important;
+}
+/* Right Master Box  */
+.studio-features-container {
+    background-color: #0A150F;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 1px;
+    justify-content: center !important;
+}
+
+.studio-feature-card {
+    background-color: #0C2018;
+    border: 1px solid rgba(42, 175, 137, 0.12);
+    border-radius: 3px;
+    padding: 10px 15px !important;
+}
+/* Texts Controllers */
+.studio-desc {
+    color: #8fa09a !important;
+    font-size: 8px !important;
+    line-height: 1.4;
+}
+.studio-tag {
+    color: #2AAF89;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+.main-heading-custom {
+    font-size: 26px !important;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+.btn-studio-accent {
+    background-color: #2AAF89 !important;
+    color: #07100e !important;
+    font-size: 8px !important;
+    letter-spacing: 1.5px;
+    padding: 8px 20px !important;
+    border-radius: 2px !important;
+    border: none;
+}
+.studio-icon-box {
+    color: #2AAF89;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+}
+.studio-feature-card h6 {
+    font-size: 11.5px !important;
+    letter-spacing: 0.2px;
+    margin-bottom: 2px !important;
+}
+/* Responsive Fixes */
+@media(max-width: 767px) {
+    .main-heading-custom {
+        font-size: 20px !important;
+    }
+
+    .studio-about-box,
+    .studio-features-container {
+        padding: 30px !important;
+    }
+}
+
+
+/* ==START FOUNDERS  == */
+.imack-founders-wrapper,
+.imack-founders-wrapper * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.imack-founders-wrapper .founders-section {
+    background-color: #0A1510; 
+    color: #ffffff;
+    padding: 45px 10px; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; 
+}
+.imack-founders-wrapper .container {
+    max-width: 1100px;
+    width: 90%; 
+    margin: 0 auto;
+}
+
+/* Headings */
+.imack-founders-wrapper .subtitle {
+    color: #2AAF89; 
+    font-size: 0.52rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.imack-founders-wrapper .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px; 
+    color: #ffffff;
+}
+
+/* Grid Layout for Cards */
+.imack-founders-wrapper .founders-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px; 
+}
+
+ .imack-founders-wrapper .founder-card {
+    background-color: #0D1A15; 
+    border: 1px solid #1a2e26;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    min-height: auto; 
+}
+
+
+.imack-founders-wrapper .avatar-container {
+    flex-shrink: 0;
+}
+
+/* Gola Layout */
+.imack-founders-wrapper .avatar-placeholder {
+    width: 70px;         
+    height: 70px;        
+    border: 2px solid #205040;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;   
+    background-color: #0D1A15;
+    margin-top: 30px;     
+    overflow: hidden;    
+}
+
+/* Image scaling */
+.imack-founders-wrapper .avatar-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Text inside cards */
+.imack-founders-wrapper .founder-info h3 {
+    font-size: 1.0rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.imack-founders-wrapper .designation {
+    color:#1AA189; 
+    font-size: 0.40rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.imack-founders-wrapper .bio {
+    color: #7A817F; 
+    font-size: 0.6rem; 
+    line-height: 1.5; 
+    margin-top: 2px;
+}
+
+
+@media (max-width: 768px) {
+    .imack-founders-wrapper .founders-section {
+        margin-top: 40px; /* Mobile par upar ka gap thoda kam kiya */
+        padding: 40px 20px; 
+    }
+    .imack-founders-wrapper .founders-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+/* == END:  FOUNDERS  == */
+
+.custom-footer-wrapper {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.custom-container {
+    max-width: 1300px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 0 auto;
+}
+
+/* --- 1. Slim Green Box --- */
+.custom-cta-banner {
+    background-color: #2AAF89;
+    padding: 28px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.banner-heading {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.banner-subtext {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Compact Buttons */
+.btn-filled,
+.btn-outlined {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 0px !important;
+    display: inline-block;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-filled {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid transparent !important;
+}
+
+.btn-filled:hover {
+    background-color: transparent !important;
+    color: #CAE7CB !important;
+    border: 1px solid #ffffff !important;
+}
+
+.btn-outlined {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.btn-outlined:hover {
+    background-color: #ffffff !important;
+    color: #2cb68f !important;
+    border: 1px solid #ffffff !important;
+}
+
+/* --- 2. Compact Black Footer --- */
+.custom-black-footer {
+    background-color: #070707;
+    padding: 28px 0;
+    width: 100%;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo .accent-color {
+    color: #2cb68f;
+}
+
+.footer-copyright {
+    color: #444444;
+    font-size: 6px;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Fixed Footer Links wrap issue */
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Overrides */
+@media (max-width: 767px) {
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .btn-wrapper {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-wrapper {
+        flex-direction: column;
+    }
+
+    .btn-filled,
+    .btn-outlined {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMACK</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle"></div>
+
+    <div>
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container-fluid px-lg-4 px-3">
+                <a class="navbar-brand logo" href="#">
+                    <h2> <span>i</span>MACK</h2>
+                    <p>PRODUCTION PVT.LTD</p>
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">WORK</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">PORTFOLIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+                    </ul>
+                    <a href="#" class="btn project-btn">
+                        START A PROJECT
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <section class="hero d-flex align-items-center">
+            <div class="container-fluid px-lg-4 px-3">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-start">
+                        <div class="badge rounded-1 mb-3 px-2 py-1 bg-transparent">
+                            <span class="blinking-dot">●</span> RAJKOT, GUJARAT — EST. 2025
+                        </div>
+                        <h2 class="hero-title fs-1 fw-bolder text-white m-0">
+                            We Build Worlds <br> That <span style="color: #2AAF89;">Don't Exist</span> <br> Yet.
+                        </h2>
+                        <p class="hero-copy mt-3 text-white-50">
+                            I MACK Production transforms ideas into extraordinary visual experiences through
+                            <br>CGI, Video Production, Motion Graphics, AI Content Creation, Branding, and Architectural
+                            <br>
+                            Visualization. Crafted with creativity. Driven by innovation.
+                        </p>
+                        <div class="mt-4 d-flex align-items-center gap-1">
+                            <a href="#" class="btn custom-btn-filled text-uppercase fw-bold text-white px-4 py-2">
+                                VIEW OUR WORK
+                            </a>
+                            <a href="#" class="btn custom-btn-outline text-uppercase fw-bold text-white px-4 py-2">
+                                WATCH SHOWREEL
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 cards-panel d-flex justify-content-lg-start mt-4 mt-lg-0">
+                        <div class="d-flex flex-wrap gap-1 cards-container w-100">
+
+                            <div class="w-100">
+                                <div
+                                    class="px-3 py-3 d-flex flex-column justify-content-between text-white featured-card">
+                                    <div class="card-icon-box card-icon-featured">🏛️</div>
+                                    <div class="card-inner w-100 text-start mt-auto">
+                                        <div>
+                                            <span class="text-uppercase tracking-wider text-white-10 d-block card-sub">
+                                                FEATURED — 2025
+                                            </span>
+                                            <h3 class="fw-bold m-0 d-block card-title">
+                                                Architectural Visualization
+                                            </h3>
+                                            <span class="text-white-50 d-block card-desc">
+                                                CGI · Real Estate · 3D Render
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex bottom-cards-row gap-1 w-100">
+                                <div class="card-half-width w-50">
+                                    <div
+                                        class="px-3 py-3 d-flex flex-column justify-content-between text-white vfx-card">
+                                        <div class="card-icon-box card-icon-vfx">🎬</div>
+                                        <div class="card-inner w-100 text-start mt-auto">
+                                            <div>
+                                                <span
+                                                    class="text-uppercase fw-bold d-block card-sub text-success">MOTION
+                                                    GRAPHICS</span>
+                                                <h4 class="fw-bold m-0 d-block card-heading-small">Brand Identity Film
+                                                </h4>
+                                                <span class="text-white-50 d-block card-desc-small">Branding ·
+                                                    Animation</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-half-width w-50">
+                                    <div
+                                        class="px-3 py-3 d-flex flex-column justify-content-between text-white cgi-card">
+                                        <div class="card-icon-box card-icon-cgi">🤖</div>
+                                        <div class="card-inner w-100 text-start mt-auto">
+                                            <div>
+                                                <span class="text-uppercase fw-bold d-block card-sub text-warning">AI
+                                                    VIDEO</span>
+                                                <h4 class="fw-bold m-0 d-block card-heading-small">AI Product Campaign
+                                                </h4>
+                                                <span class="text-white-50 d-block card-desc-small">AI · Video
+                                                    Production</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+        <section class="stats-section">
+            <div class="container-fluid px-lg-4 px-3">
+                <div class="row text-center g-0">
+
+                    <div class="col-12 col-md-3 stat-box">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+
+                    <div class="col-12 col-md-3 stat-box">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+
+                    <div class="col-12 col-md-3 stat-box">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+
+                    <div class="col-12 col-md-3 stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="pt-5 pb-3" style="background-color: #07100e;">
+            <div class="container-fluid px-lg-4 px-3">
+                <div class="row">
+                    <div class="col-12 text-start">
+                        <span class="text-uppercase fw-semibold d-block mb-1"
+                            style="color: #2AAF89; font-size: 8px; letter-spacing: 2px;">
+                            What We Do
+                        </span>
+                        <h2 class="text-white fw-bold m-0 fs-2" style="letter-spacing: -0.4px;">
+                            Our Services
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid px-lg-4 px-3 my-5">
+                <div class="row g-1">
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="imack-card-box w-100">
+                            <div class="imack-top-row">
+                                <span class="imack-icon">🏗️</span>
+                                <span class="imack-number">01</span>
+                            </div>
+                            <h3 class="imack-title">CGI & 3D Visualization</h3>
+                            <p class="imack-desc">Photorealistic 3D renders, product visualization, and high-end CGI
+                                content for brands, advertising, and media.</p>
+                            <div class="imack-tags-wrapper">
+                                <span class="imack-tag">3D RENDER</span>
+                                <span class="imack-tag">PRODUCT CGI</span>
+                                <span class="imack-tag">BLENDER</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="imack-card-box w-100">
+                            <div class="imack-top-row">
+                                <span class="imack-icon">✂️</span>
+                                <span class="imack-number">02</span>
+                            </div>
+                            <h3 class="imack-title">Video Editing</h3>
+                            <p class="imack-desc">Professional video editing for corporate films, reels, YouTube
+                                content, advertisements, and event highlights.</p>
+                            <div class="imack-tags-wrapper">
+                                <span class="imack-tag">CORPORATE</span>
+                                <span class="imack-tag">REELS</span>
+                                <span class="imack-tag">AD FILMS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="imack-card-box w-100">
+                            <div class="imack-top-row">
+                                <span class="imack-icon">✨</span>
+                                <span class="imack-number">03</span>
+                            </div>
+                            <h3 class="imack-title">Motion Graphics</h3>
+                            <p class="imack-desc">Eye-catching animated graphics for social media, intros, explainer
+                                videos, title sequences, and brand films.</p>
+                            <div class="imack-tags-wrapper">
+                                <span class="imack-tag">AFTER EFFECTS</span>
+                                <span class="imack-tag">ANIMATION</span>
+                                <span class="imack-tag">TITLES</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="imack-card-box w-100">
+                            <div class="imack-top-row">
+                                <span class="imack-icon">🤖</span>
+                                <span class="imack-number">04</span>
+                            </div>
+                            <h3 class="imack-title">AI Video Production</h3>
+                            <p class="imack-desc">Next-generation AI-powered video content — product showcases, brand
+                                stories, and marketing campaigns using cutting-edge AI tools.</p>
+                            <div class="imack-tags-wrapper">
+                                <span class="imack-tag">AI TOOLS</span>
+                                <span class="imack-tag">GENERATIVE</span>
+                                <span class="imack-tag">SORA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="imack-card-box w-100">
+                            <div class="imack-top-row">
+                                <span class="imack-icon">🎨</span>
+                                <span class="imack-number">05</span>
+                            </div>
+                            <h3 class="imack-title">Branding & Identity</h3>
+                            <p class="imack-desc">Complete brand identity design — logo, visual identity, brand
+                                guidelines, packaging, and marketing collateral.</p>
+                            <div class="imack-tags-wrapper">
+                                <span class="imack-tag">LOGO DESIGN</span>
+                                <span class="imack-tag">IDENTITY</span>
+                                <span class="imack-tag">GUIDELINES</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="imack-card-box w-100">
+                            <div class="imack-top-row">
+                                <span class="imack-icon">🏛️</span>
+                                <span class="imack-number">06</span>
+                            </div>
+                            <h3 class="imack-title">Architectural Visualization</h3>
+                            <p class="imack-desc">Stunning 3D architectural renders, walkthroughs, and virtual tours for
+                                real estate, interior design, and construction projects.</p>
+                            <div class="imack-tags-wrapper">
+                                <span class="imack-tag">ARCH VIZ</span>
+                                <span class="imack-tag">WALKTHROUGH</span>
+                                <span class="imack-tag">REAL ESTATE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="pt-5 pb-3" style="background-color: #07100e;">
+            <div class="container-fluid px-lg-4 px-3">
+                <div class="row">
+                    <div class="col-12 text-start">
+                        <span class="text-uppercase fw-semibold d-block mb-1"
+                            style="color: #2AAF89; font-size: 8px; letter-spacing: 2px;">
+                            SELECTED WORK
+                        </span>
+                        <h2 class="text-white fw-bold m-0 fs-2" style="letter-spacing: -0.4px;">
+                            Latest Projects
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="projects-gallery-section pb-5">
+            <div class="container-fluid px-lg-4 px-3">
+                <div class="row g-1 row-equal-height">
+
+                    <div class="col-md-4 d-flex">
+                        <div class="project-card big-card card-green w-100">
+                            <div class="center-icon">
+                                <i class="bi bi-planet"></i>
+                            </div>
+                            <div class="card-info">
+                                <span class="card-category">3D ANIMATION</span>
+                                <h3 class="card-title-text">Cinematic Brand Film</h3>
+                                <span class="card-year">2025 · Campaign</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="row g-1">
+
+                            <div class="col-6">
+                                <div class="project-card small-card card-purple">
+                                    <div class="center-icon"><i class="bi bi-stars"></i></div>
+                                    <div class="card-info">
+                                        <span class="card-category">VFX</span>
+                                        <h3 class="card-title-text">Sci-Fi Title Sequence</h3>
+                                        <span class="card-year">2025 · Film</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="project-card small-card card-gold">
+                                    <div class="center-icon"><i class="bi bi-award"></i></div>
+                                    <div class="card-info">
+                                        <span class="card-category">MOTION GRAPHICS</span>
+                                        <h3 class="card-title-text">Brand Identity Reveal</h3>
+                                        <span class="card-year">2024 · Digital</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="project-card small-card card-blue">
+                                    <div class="center-icon"><i class="bi bi-building"></i></div>
+                                    <div class="card-info">
+                                        <span class="card-category">CGI</span>
+                                        <h3 class="card-title-text">Architectural Walkthrough</h3>
+                                        <span class="card-year">2024 · Real Estate</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="project-card small-card card-red">
+                                    <div class="center-icon"><i class="bi bi-fire"></i></div>
+                                    <div class="card-info">
+                                        <span class="card-category">SIMULATION</span>
+                                        <h3 class="card-title-text">Destruction FX Reel</h3>
+                                        <span class="card-year">2024 · FX</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= START: MEET THE FOUNDERS SECTION ================= -->
+        <div class="imack-founders-wrapper">
+            <section class="founders-section">
+                <div class="container">
+                    <p class="subtitle">THE PEOPLE BEHIND IT</p>
+                    <h1 class="title">Meet the Founders</h1>
+
+                    <div class="founders-grid">
+                        <div class="founder-card">
+                            <div class="avatar-container">
+                                <div class="avatar-placeholder">👨‍💼</div>
+                            </div>
+                            <div class="founder-info">
+                                <h3>Aakash Chudasama</h3>
+                                <p class="designation">FOUNDER & MANAGING DIRECTOR (MD)</p>
+                                <p class="bio">
+                                    Aakash leads the creative and strategic vision of I Mack Production.
+                                    With expertise in CGI, 3D animation, VFX, Unreal Engine, and AI video,
+                                    he also serves as Associate Professor at Marwadi University —
+                                    teaching the next generation of 3D artists and VFX professionals.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="founder-card">
+                            <div class="avatar-container">
+                                <div class="avatar-placeholder">💻</div>
+                            </div>
+                            <div class="founder-info">
+                                <h3>Sahil Jadav</h3>
+                                <p class="designation">CO-FOUNDER & CEO</p>
+                                <p class="bio">
+                                    Sahil drives the business operations and growth of I Mack Production.
+                                    As CEO, he manages client relationships, project delivery, and the
+                                    studio's expansion — ensuring every project is executed with precision,
+                                    on time and on budget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- === FOUNDERS SECTION ==== -->
+        <div class="container-fluid px-lg-4 px-3 studio-custom-section">
+            <div class="row g-0 align-items-stretch">
+
+                <div class="col-md-6">
+                    <div class="studio-about-box p-5 h-100 d-flex flex-column justify-content-center">
+                        <span class="studio-tag text-uppercase fw-bold d-block mb-3">ABOUT THE STUDIO</span>
+                        <h1 class="fw-bold text-white mb-3 main-heading-custom">Where Technology Meets<br>Creative
+                            Vision</h1>
+                        <p class="studio-desc mb-4">
+                            I Mack Production is based in Rajkot, Gujarat — a creative studio driven by passion for 3D,
+                            VFX, and storytelling. We combine deep technical expertise with artistic precision to
+                            deliver work that stands out globally.
+                        </p>
+                        <div>
+                            <button class="btn btn-studio-accent text-uppercase fw-bold">About Us</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="studio-features-container p-3 h-100 d-flex flex-column justify-content-center gap-3">
+
+                        <div class="studio-feature-card d-flex align-items-center p-3">
+                            <div class="studio-icon-box me-3">
+                                <i class="bi bi-diagram-3"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold text-white">Industry-Grade Pipeline</h6>
+                                <p class="studio-desc small mb-0">Blender · Unreal Engine · After Effects · DaVinci
+                                    Resolve</p>
+                            </div>
+                        </div>
+
+                        <div class="studio-feature-card d-flex align-items-center p-3">
+                            <div class="studio-icon-box me-3">
+                                <i class="bi bi-mortarboard"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold text-white">Academic Excellence</h6>
+                                <p class="studio-desc small mb-0">Faculty at Marwadi University — teaching 3D, VFX &
+                                    Animation</p>
+                            </div>
+                        </div>
+
+                        <div class="studio-feature-card d-flex align-items-center p-3">
+                            <div class="studio-icon-box me-3">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold text-white">Growing Team</h6>
+                                <p class="studio-desc small mb-0">Interns & professionals working on real-world projects
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="studio-feature-card d-flex align-items-center p-3">
+                            <div class="studio-icon-box me-3">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold text-white">Rajkot, Gujarat, India</h6>
+                                <p class="studio-desc small mb-0">Serving clients locally & internationally</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="custom-footer-wrapper">
+
+            <section class="custom-cta-banner text-white">
+                <div class="container-fluid custom-container">
+                    <div class="row align-items-center gy-3">
+                        <div class="col-md-7 text-center text-md-start">
+                            <h2 class="banner-heading">Have a Project in Mind?</h2>
+                            <p class="banner-subtext">Let's build something extraordinary together. Reach out today.</p>
+                        </div>
+                        <div class="col-md-5 text-center text-md-end">
+                            <div class="btn-wrapper d-inline-flex align-items-center gap-3">
+                                <a href="#" class="btn btn-filled">Start a Project</a>
+                                <a href="#" class="btn btn-outlined">Watch Showreel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="custom-black-footer">
+                <div class="container-fluid custom-container">
+                    <div class="row align-items-center gy-3">
+
+                        <div class="col-md-4 text-center text-md-start">
+                            <h3 class="footer-logo"><span class="accent-color">iMACK</span> Production</h3>
+                            <p class="footer-copyright">© 2025 | Mack Production · Rajkot, India</p>
+                        </div>
+                        <div class="col-md-8 text-center text-md-end">
+                            <div class="footer-links">
+                                <a href="#">Work</a>
+                                <a href="#">Services</a>
+                                <a href="#">About</a>
+                                <a href="#">Contact</a>
+                                <a href="#">Instagram</a>
+                                <a href="#">Youtube</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bundle.min.js"></script>
+
+    <script>
+        const dot = document.querySelector('.custom-cursor-dot');
+        const circle = document.querySelector('.custom-cursor-circle');
+
+        document.addEventListener('mousemove', (e) => {
+            // Update dot instantly
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+
+            // Outer circle slightly lags or syncs via CSS transitions
+            circle.style.left = e.clientX + 'px';
+            circle.style.top = e.clientY + 'px';
+        });
+
+        // Hover effect list tags/classes
+        const interactiveElements = document.querySelectorAll('a, button, .project-card, .service-card-custom, .featured-card, .vfx-card, .cgi-card');
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                dot.classList.add('cursor-hover');
+                circle.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                dot.classList.remove('cursor-hover');
+                circle.classList.remove('cursor-hover');
+            });
+        });
+    </script>
+</body>
+
+</html>

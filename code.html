@@ -1,199 +1,1237 @@
-.studio-section {
-    background-color: #050b09;
-    /* 👇 PEHLE 60px THA, ISKO KAM KARKE 10px YA 20px KAR DO TAKI UPAR CHIPAK JAYE */
-    padding: 4px 60px 40px ; /* Top, Right, Bottom, Left */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: start; /* Ye dono boxes ko top se align rakhega */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 1200px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #07100e;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ========================================================
+   👇 SLEEK & SMALL DUAL-TONE POINTER (SIZE REDUCED)
+======================================================= */
+html, body {
+    /* Normal screen par ab size 32px se chhota karke 24px kar diya hai */
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 512 512'%3E%3Cpath d='M16 16L240 496L314.3 323.7L496 240L16 16Z' fill='%231f8265'/%3E%3Cpath d='M16 16L240 496L314.3 323.7L16 16Z' fill='%232AAF89'/%3E%3C/svg%3E") 1 1, auto !important;
+}
+
+/* Hover karne par ab size 40px se chhota karke 30px kar diya hai */
+a, 
+button,
+.project-btn,
+.custom-btn-filled,
+.custom-btn-outline,
+.btn-filled,
+.btn-outlined,
+.btn-studio-accent,
+.featured-card, 
+.vfx-card, 
+.cgi-card, 
+.project-card,
+.service-card-custom, 
+.studio-feature-card {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 512 512'%3E%3Cpath d='M16 16L240 496L314.3 323.7L496 240L16 16Z' fill='%23249474'/%3E%3Cpath d='M16 16L240 496L314.3 323.7L16 16Z' fill='%2336cb9f'/%3E%3C/svg%3E") 1 1, pointer !important;
+}
+
+
+.container-fluid {
+    max-width: 1400px !important;
     margin: 0 auto;
 }
 
-/* Left Content Styling */
-.left-content {
-    background-color: #0b1512;
-    display: flex;
-    flex-direction: column;
-    /* ---> YAHAN SE TEXT BEECH ME AAYEGA: Content ko center me align karne ke liye */
-    justify-content: center;
-    padding: 60px 80px;
-    /* ---> Right side ke boxes se height match karne ke liye min-height di hai */
-    min-height: 8cm;
-    box-sizing: border-box;
-    border-radius: 1px;
-    /* Taaki right wale boxes ki tarah corners rounded rahein */
-    gap: 10px;
+/* Navbar */
+.custom-navbar {
+    background: #07100e;
+    padding: 8px 0;
 }
 
-.tagline {
-    color: #1bd19c;
-    /* Bright teal/green code */
-    font-size: 6px;
-    font-weight: 400;
+.custom-navbar .container-fluid {
+    padding: 4px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #07100e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Logo */
+.logo {
+    text-decoration: none;
+}
+
+.logo h2 {
+    color: #2AAF89;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+}
+
+.logo span {
+    color: #fff;
+}
+
+.logo p {
+    color: #a9aaa3;
+    font-size: 7px;
+    letter-spacing: 3px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Menu */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0;
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2AAF89 !important;
+}
+
+/* Button */
+.project-btn {
+    background: #2AAF89;
+    color: #fff;
+    text-decoration: none;
+    padding: 4px 20px;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.project-btn:hover {
+    background: #12af94;
+    color: #fff;
+}
+
+/* Hero Section Styling */
+.hero {
+    background-color: #07100e;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.hero h2 {
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 10px;
+    max-width: 450px;
+    line-height: 1.8;
+}
+
+/* Badge & Animation */
+.badge {
+    border: 0.5px solid #2AAF89 !important;
+    color: #2AAF89 !important;
+    font-size: 6px !important;
+    font-weight: 500;
     letter-spacing: 2px;
 }
 
-.main-heading {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0;
+.blinking-dot {
+    display: inline-block;
+    margin-right: 5px;
+    animation: blink 1s infinite;
 }
 
-.description {
-    color: #8fa09a;
-    /* Soft gray-green color */
-    font-size: 10px;
-    line-height: 1.6;
-    margin: 0;
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
-/* Button Styling */
-.about-btn {
-    background-color: #1bd19c;
-    color: #ffff;
-    border: none;
-    padding: 8px 18px;
+/* Buttons Styles */
+.custom-btn-filled,
+.custom-btn-outline {
     font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border-radius: 1px;
-    cursor: pointer;
-    width: fit-content;
-    margin-top: 10px;
-    transition: opacity 0.2s;
-}
-
-.about-btn:hover {
-    opacity: 0.9;
-}
-
-/* Right Side Cards Container */
-.right-boxes {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* Individual Feature Card Box */
-.feature-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background-color: #0b1512;
-    /* Jo image me boxes ka dark shade h */
-    border: 1px solid rgba(27, 209, 156, 0.08);
-    /* Subtle low-opacity border */
-    border-radius: 6px;
-    padding: 16px 20px;
+    font-weight: normal !important;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 0px !important; 
     transition: all 0.3s ease;
 }
 
-/* Hover Effect on Boxes */
-.feature-box:hover {
-    border-color: rgba(27, 209, 156, 0.25);
-    background-color: #101e1a;
+.custom-btn-filled {
+    background-color: #2bb38a !important;
+    border: 1px solid #2bb38a !important;
+    color: #ffffff !important;
 }
 
-/* Icon positioning */
-.feature-icon {
-    margin-top: 3px;
+.custom-btn-filled:hover {
+    background-color: #07100e !important;
+    border-color: #ebf2f0 !important;
 }
 
-/* Box Content */
-.feature-content {
+.custom-btn-outline {
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+}
+
+.custom-btn-outline:hover {
+    background-color: #2bb38a !important;
+    border-color: #2bb38a !important;
+}
+
+/* Right Side Cards Container */
+.cards-container {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 48px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px !important;
 }
 
-.feature-title {
-    color: #ffffff;
-    font-size: 15px;
+/* Top Feature Card */
+.featured-card {
+    background: linear-gradient(135deg, #0A291E 50%, #114937 100%);
+    min-height: 110px;
+    border: 1px solid rgba(22, 90, 67, 0.28);
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-icon-box {
+    width: 14px;
+    height: 15px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    opacity: 0.7;
+    margin-bottom: 8px !important;
+}
+
+.card-sub {
+    font-size: 6px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    color: #146B4D !important;
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+}
+
+.card-desc {
+    font-size: 8px;
+    line-height: 1.2;
+}
+
+/* Bottom Row Cards */
+.bottom-cards-row {
+    width: 100%;
+    margin-top: 0px !important;
+    display: flex !important;
+    gap: 8px !important; 
+}
+
+.card-half-width {
+    width: 50%;
+}
+
+.vfx-card {
+    background: linear-gradient(135deg, #121628 40%, #101D35 60%);
+    min-height: 105px;
+    border: 0px solid rgba(15, 37, 67, 0.1);
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vfx-card .card-icon-box,
+.cgi-card .card-icon-box {
+    height: 16px;
+}
+
+.cgi-card {
+    background: linear-gradient(135deg, #321C00 40%, #532D00 110%);
+    min-height: 105px;
+    border: 1px solid #532D00;
+    width: 100%;
+    border-radius: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Smooth Hover with Z-index fix */
+.featured-card:hover, .vfx-card:hover, .cgi-card:hover {
+    transform: scale(1.02);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-heading-small {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+}
+
+.card-desc-small {
+    font-size: 8px;
+    line-height: 1.3;
+    margin-bottom: 0px !important;
+}
+
+/* --- Stats Counter Section Styles --- */
+.stats-section {
+    background-color: #07100e;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-box {
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+    color: #2AAF89;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.0;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.stat-box:last-child {
+    border-bottom: none;
+}
+
+@media(min-width: 768px) {
+    .stat-box {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+    }
+
+    .stat-box:last-child {
+        border-right: none;
+    }
+}
+
+/* Mobile Adjustments */
+@media(max-width:991px) {
+    .custom-navbar .container-fluid {
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .project-btn,
+    .custom-btn-filled,
+    .custom-btn-outline {
+        margin-top: 10px;
+        font-size: 7px;
+        padding: 5px 12px;
+    }
+
+    .badge {
+        font-size: 5px !important;
+    }
+}
+
+/* --- Projects Gallery Styles --- */
+.projects-gallery-section {
+    background-color: #07100e;
+}
+
+.project-card {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 1px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    border: 2px solid #07100e !important;
+}
+
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.big-card {
+    height: 70%;
+    min-height: 325px;
+}
+
+.small-card {
+    height: 160px;
+}
+
+.project-card:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
+    z-index: 10; 
+}
+
+.center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+}
+
+.small-card .center-icon {
+    font-size: 2.5rem;
+}
+
+.big-card .center-icon {
+    font-size: 4.5rem;
+}
+
+/* Card Typography */
+.card-info {
+    z-index: 2;
+}
+
+.card-category {
+    color: #2AAF89;
+    font-size: 6px;
     font-weight: 600;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-title-text {
+    color: #fffbfb;
+    font-size: 10px;
+    font-weight: 700;
+    margin: 0 0 2px 0;
+}
+
+.big-card .card-title-text {
+    font-size: 18px;
+}
+
+.card-year {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 6px;
+    display: block;
+}
+
+/* --- Gradients --- */
+.card-green {
+    background: linear-gradient(135deg, #092e1e 20%, #051a11 100%);
+}
+
+.card-purple {
+    background: linear-gradient(135deg, #2b0e43 0%, #11051c 100%);
+}
+
+.card-gold {
+    background: linear-gradient(135deg, #4d3807 0%, #211702 100%);
+}
+
+.card-blue {
+    background: linear-gradient(135deg, #0a263d 0%, #03101c 100%);
+}
+
+.card-red {
+    background: linear-gradient(135deg, #441111 0%, #1c0505 100%);
+}
+
+.center-icon i {
+    color: #fff !important;
+    opacity: 0.2;
+}
+
+/* Hover Effect */
+.custom-environment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(7, 84, 29, 0.2);
+}
+
+.services-wrapper-section {
+    position: relative;
+    z-index: 10;
+    margin-top: -48px;
+    padding-left: 12px;
+    margin-top: 14px !important;
+    padding-right: 14px;
+}
+
+/* --- Clean Service Card  --- */
+.service-card-custom {
+    background-color: #0D1A15;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Smooth hover */
+.service-card-custom:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    transform: translateY(-3px);
+}
+
+.service-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Icon Box */
+.service-icon-box {
+    width: 34px;
+    height: 34px;
+    background-color: rgba(42, 175, 137, 0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon-box i {
+    color: #2AAF89;
+    font-size: 1rem;
+}
+
+/* Serial Numbers */
+.service-number {
+    color: rgba(42, 175, 137, 0.3);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Text Formatting */
+.service-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.service-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
     margin: 0;
 }
 
-.feature-subtitle {
-    color: #6a7b75;
-    /* Thoda zyada dark text detail ke liye */
-    font-size: 13px;
+.service-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10.5px;
+    line-height: 1.4;
     margin: 0;
 }
 
-/* Mobile Responsive Setup */
-@media (max-width: 768px) {
-    .studio-section {
-        grid-template-columns: 1fr;
-        /* Mobile me ek ke niche ek dikhega */
-        padding: 30px 20px;
-        gap: 30px;
+.studio-custom-section .row {
+    height: 300px !important;
+    align-items: stretch;
+}
+
+.studio-custom-section {
+    margin-top: 2px !important;
+    padding-top: 2px !important;
+}
+
+.studio-about-box {
+    background-color: #0D1A15;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 1px;
+    padding: 40px !important;
+}
+
+/* Right Master Box  */
+.studio-features-container {
+    background-color: #0A150F;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 1px;
+    justify-content: center !important;
+}
+
+.studio-feature-card {
+    background-color: #0C2018;
+    border: 1px solid rgba(42, 175, 137, 0.12);
+    border-radius: 3px;
+    padding: 10px 15px !important;
+}
+
+/* Texts Controllers */
+.studio-desc {
+    color: #8fa09a !important;
+    font-size: 8px !important;
+    line-height: 1.4;
+}
+
+.studio-tag {
+    color: #2AAF89;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.main-heading-custom {
+    font-size: 26px !important;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+
+.btn-studio-accent {
+    background-color: #2AAF89 !important;
+    color: #07100e !important;
+    font-size: 8px !important;
+    letter-spacing: 1.5px;
+    padding: 8px 20px !important;
+    border-radius: 2px !important;
+    border: none;
+}
+
+.studio-icon-box {
+    color: #2AAF89;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+}
+
+.studio-feature-card h6 {
+    font-size: 11.5px !important;
+    letter-spacing: 0.2px;
+    margin-bottom: 2px !important;
+}
+
+/* Responsive Fixes */
+@media(max-width: 767px) {
+    .main-heading-custom {
+        font-size: 20px !important;
     }
 
-    .main-heading {
-        font-size: 28px;
+    .studio-about-box,
+    .studio-features-container {
+        padding: 30px !important;
+    }
+}
+
+.custom-footer-wrapper {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.custom-container {
+    max-width: 1300px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 0 auto;
+}
+
+/* --- 1. Slim Green Box --- */
+.custom-cta-banner {
+    background-color: #2AAF89;
+    padding: 28px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.banner-heading {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.banner-subtext {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Compact Buttons */
+.btn-filled,
+.btn-outlined {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 0px !important;
+    display: inline-block;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-filled {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid transparent !important;
+}
+
+.btn-filled:hover {
+    background-color: transparent !important;
+    color: #CAE7CB !important;
+    border: 1px solid #ffffff !important;
+}
+
+.btn-outlined {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.btn-outlined:hover {
+    background-color: #ffffff !important;
+    color: #2cb68f !important;
+    border: 1px solid #ffffff !important;
+}
+
+/* --- 2. Compact Black Footer --- */
+.custom-black-footer {
+    background-color: #070707;
+    padding: 28px 0;
+    width: 100%;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo .accent-color {
+    color: #2cb68f;
+}
+
+.footer-copyright {
+    color: #444444;
+    font-size: 6px;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Fixed Footer Links wrap issue */
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Overrides */
+@media (max-width: 767px) {
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .btn-wrapper {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-wrapper {
+        flex-direction: column;
+    }
+
+    .btn-filled,
+    .btn-outlined {
+        width: 100%;
+        text-align: center;
     }
 }
 
 
-<!-- HTML Code -->
 
- <section class="studio-section">
-  <!-- Left Side Content -->
-  <div class="left-content">
-    <span class="tagline">ABOUT THE STUDIO</span>
-    <h2 class="main-heading">Where Technology Meets Creative Vision</h2>
-    <p class="description">
-      I Mack Production is based in Rajkot, Gujarat — a creative studio driven by passion  
-      for 3D, VFX, and storytelling. We combine deep technical  expertise <br>
-        with artistic  precision to deliver work that stands out globally.
-    </p>
-    <button class="about-btn">ABOUT US</button>
-  </div>
 
-  <!-- Right Side Content (Cards) -->
-  <div class="right-boxes">
-    <div class="feature-box">
-      <div class="feature-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 17 6-5-6-5v10z"/><path d="m22 17-6-5 6-5v10z"/><path d="m14 17-6-5 6-5v10z"/></svg>
-      </div>
-      <div class="feature-content">
-        <h3 class="feature-title">Industry-Grade Pipeline</h3>
-        <p class="feature-subtitle">Blender · Unreal Engine · After Effects · DaVinci Resolve</p>
-      </div>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMACK</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle"></div>
+
+    <div>
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container-fluid px-lg-4 px-3">
+                <a class="navbar-brand logo" href="#">
+                    <h2> <span>i</span>MACK</h2>
+                    <p>PRODUCTION STUDIO</p>
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">WORK</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">SERVICES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">STUDIO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+                    </ul>
+                    <a href="#" class="btn project-btn">
+                        START A PROJECT
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <section class="hero d-flex align-items-center">
+            <div class="container-fluid px-lg-4 px-3">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-start">
+                        <div class="badge rounded-1 mb-3 px-2 py-1 bg-transparent">
+                            <span class="blinking-dot">●</span> RAJKOT, GUJARAT — EST. 2016
+                        </div>
+                        <h2 class="fs-1 fw-bolder text-white m-0">
+                            We Build Worlds <br> That <span style="color: #2AAF89;">Don't Exist</span> <br> Yet.
+                        </h2>
+                        <p class="mt-3 text-white-50">
+                            I Mack Production is a full-service 3D animation, VFX, and CGI <br> studio. We turn creative
+                            visions into cinematic reality — for <br> brands, films, and digital experiences.
+                        </p>
+                        <div class="mt-4 d-flex align-items-center gap-1">
+                            <a href="#" class="btn custom-btn-filled text-uppercase fw-bold text-white px-4 py-2">
+                                VIEW OUR WORK
+                            </a>
+                            <a href="#" class="btn custom-btn-outline text-uppercase fw-bold text-white px-4 py-2">
+                                WATCH SHOWREEL
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-lg-end mt-4 mt-lg-0">
+                        <div class="d-flex flex-wrap gap-1 cards-container">
+                            
+                            <div class="w-100">
+                                <div class="px-3 pb-3 d-flex flex-column justify-content-end text-white featured-card">
+                                    <div class="card-icon-box"></div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="w-100">
+                                            <span class="text-uppercase tracking-wider text-white-10 d-block card-sub">
+                                                FEATURED — 2025
+                                            </span>
+                                            <h3 class="fw-bold m-0 d-block card-title">
+                                                Cinematic Product Campaign
+                                            </h3>
+                                            <span class="text-white-50 d-block card-desc">
+                                                3D Animation · Brand Film
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex bottom-cards-row gap-1 ">
+                                <div class="card-half-width">
+                                    <div class="p-3 d-flex flex-column justify-content-end text-white vfx-card">
+                                        <div class="card-icon-box"></div>
+                                        <div>
+                                            <span class="text-uppercase fw-bold d-block card-sub">VFX</span>
+                                            <h4 class="fw-bold m-0 d-block card-heading-small">Title Sequence</h4>
+                                            <span class="text-white-50 d-block card-desc-small">Film Production</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-half-width">
+                                    <div class="p-3 d-flex flex-column justify-content-end text-white cgi-card">
+                                        <div class="card-icon-box"></div>
+                                        <div>
+                                            <span class="text-uppercase fw-bold d-block card-sub">CGI</span>
+                                            <h4 class="fw-bold m-0 d-block card-heading-small">Arch Visualization</h4>
+                                            <span class="text-white-50 d-block card-desc-small">Real Estate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="stats-section">
+            <div class="container-fluid px-lg-4 px-3">
+                <div class="row text-center g-0">
+
+                    <div class="col-12 col-md-3 stat-box">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+
+                    <div class="col-12 col-md-3 stat-box">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+
+                    <div class="col-12 col-md-3 stat-box">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+
+                    <div class="col-12 col-md-3 stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="pt-5 pb-3" style="background-color: #07100e;">
+            <div class="container-fluid px-lg-4 px-3">
+                <div class="row">
+                    <div class="col-12 text-start">
+                        <span class="text-uppercase fw-semibold d-block mb-1"
+                            style="color: #2AAF89; font-size: 8px; letter-spacing: 2px;">
+                            SELECTED WORK
+                        </span>
+                        <h2 class="text-white fw-bold m-0 fs-2" style="letter-spacing: -0.4px;">
+                            Latest Projects
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="projects-gallery-section pb-5">
+    <div class="container-fluid px-lg-4 px-3">
+        <div class="row g-1 row-equal-height">
+            
+            <div class="col-md-4 d-flex">
+                <div class="project-card big-card card-green w-100">
+                    <div class="center-icon">
+                        <i class="bi bi-planet"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-category">3D ANIMATION</span>
+                        <h3 class="card-title-text">Cinematic Brand Film</h3>
+                        <span class="card-year">2025 · Campaign</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="row g-1">
+                    
+                    <div class="col-6">
+                        <div class="project-card small-card card-purple">
+                            <div class="center-icon"><i class="bi bi-stars"></i></div>
+                            <div class="card-info">
+                                <span class="card-category">VFX</span>
+                                <h3 class="card-title-text">Sci-Fi Title Sequence</h3>
+                                <span class="card-year">2025 · Film</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="project-card small-card card-gold">
+                            <div class="center-icon"><i class="bi bi-award"></i></div>
+                            <div class="card-info">
+                                <span class="card-category">MOTION GRAPHICS</span>
+                                <h3 class="card-title-text">Brand Identity Reveal</h3>
+                                <span class="card-year">2024 · Digital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="project-card small-card card-blue">
+                            <div class="center-icon"><i class="bi bi-building"></i></div>
+                            <div class="card-info">
+                                <span class="card-category">CGI</span>
+                                <h3 class="card-title-text">Architectural Walkthrough</h3>
+                                <span class="card-year">2024 · Real Estate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="project-card small-card card-red">
+                            <div class="center-icon"><i class="bi bi-fire"></i></div>
+                            <div class="card-info">
+                                <span class="card-category">SIMULATION</span>
+                                <h3 class="card-title-text">Destruction FX Reel</h3>
+                                <span class="card-year">2024 · FX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
     </div>
+</section>
+            <div class="services-wrapper-section">
+    <div class="container-fluid">
+        <div class="row g-1 gy-1">
+            <div class="col-md-6">
+                <div class="service-card-custom">
+                    <div class="service-card-header">
+                        <div class="service-icon-box">
+                            <i class="bi bi-box-seam"></i> 
+                        </div>
+                        <span class="service-number"></span>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-title">3D Animation & Character</h3>
+                        <p class="service-desc">Photorealistic character animation, creature FX, and cinematic motion storytelling for films and brands.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="service-card-custom">
+                    <div class="service-card-header">
+                        <div class="service-icon-box">
+                            <i class="bi bi-stars"></i>
+                        </div>
+                        <span class="service-number"></span>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-title">Visual Effects (VFX)</h3>
+                        <p class="service-desc">Compositing, destruction simulations, particle FX, and seamless live-action integration at broadcast quality.</p>
+                    </div>
+                </div>
+            </div>
 
-    <div class="feature-box">
-      <div class="feature-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 18.8v-4L2 13"/><path d="M12 22v-6.3"/></svg>
-      </div>
-      <div class="feature-content">
-        <h3 class="feature-title">Academic Excellence</h3>
-        <p class="feature-subtitle">Faculty at Marwadi University — teaching 3D, VFX & Animation</p>
-      </div>
-    </div>
+            <div class="col-md-6">
+                <div class="service-card-custom">
+                    <div class="service-card-header">
+                        <div class="service-icon-box">
+                            <i class="bi bi-cube"></i>
+                        </div>
+                        <span class="service-number">03</span>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-title">CGI & Product Visualization</h3>
+                        <p class="service-desc">High-end product renders, architectural walkthroughs, and photorealistic CGI for brands and real estate.</p>
+                    </div>
+                </div>
+            </div>
 
-    <div class="feature-box">
-      <div class="feature-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <div class="feature-content">
-        <h3 class="feature-title">Growing Team</h3>
-        <p class="feature-subtitle">Interns & professionals working on real-world projects</p>
-      </div>
-    </div>
-
-    <div class="feature-box">
-      <div class="feature-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div class="feature-content">
-        <h3 class="feature-title">Rajkot, Gujarat, India</h3>
-        <p class="feature-subtitle">Serving clients locally & internationally</p>
-      </div>
+            <div class="col-md-6">
+                <div class="service-card-custom">
+                    <div class="service-card-header">
+                        <div class="service-icon-box">
+                            <i class="bi bi-controller"></i>
+                        </div>
+                        <span class="service-number">04</span>
+                    </div>
+                    <div class="service-card-body">
+                        <h3 class="service-title">Unreal Engine & Real-Time</h3>
+                        <p class="service-desc">Interactive 3D visualizations, virtual production pipelines, and immersive real-time experiences in UE5.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-</section>
+      <div class="container-fluid px-lg-4 px-3 studio-custom-section"> 
+  <div class="row g-0 align-items-stretch">
+    
+    <div class="col-md-6">
+      <div class="studio-about-box p-5 h-100 d-flex flex-column justify-content-center">
+        <span class="studio-tag text-uppercase fw-bold d-block mb-3">ABOUT THE STUDIO</span>
+        <h1 class="fw-bold text-white mb-3 main-heading-custom">Where Technology Meets<br>Creative Vision</h1>
+        <p class="studio-desc mb-4">
+          I Mack Production is based in Rajkot, Gujarat — a creative studio driven by passion for 3D, VFX, and storytelling. We combine deep technical expertise with artistic precision to deliver work that stands out globally.
+        </p>
+        <div>
+          <button class="btn btn-studio-accent text-uppercase fw-bold">About Us</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="studio-features-container p-3 h-100 d-flex flex-column justify-content-center gap-3">
+        
+        <div class="studio-feature-card d-flex align-items-center p-3">
+          <div class="studio-icon-box me-3">
+            <i class="bi bi-diagram-3"></i>
+          </div>
+          <div>
+            <h6 class="mb-0 fw-bold text-white">Industry-Grade Pipeline</h6>
+            <p class="studio-desc small mb-0">Blender · Unreal Engine · After Effects · DaVinci Resolve</p>
+          </div>
+        </div>
+
+        <div class="studio-feature-card d-flex align-items-center p-3">
+          <div class="studio-icon-box me-3">
+            <i class="bi bi-mortarboard"></i>
+          </div>
+          <div>
+            <h6 class="mb-0 fw-bold text-white">Academic Excellence</h6>
+            <p class="studio-desc small mb-0">Faculty at Marwadi University — teaching 3D, VFX & Animation</p>
+          </div>
+        </div>
+
+        <div class="studio-feature-card d-flex align-items-center p-3">
+          <div class="studio-icon-box me-3">
+            <i class="bi bi-people"></i>
+          </div>
+          <div>
+            <h6 class="mb-0 fw-bold text-white">Growing Team</h6>
+            <p class="studio-desc small mb-0">Interns & professionals working on real-world projects</p>
+          </div>
+        </div>
+
+        <div class="studio-feature-card d-flex align-items-center p-3">
+          <div class="studio-icon-box me-3">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <div>
+            <h6 class="mb-0 fw-bold text-white">Rajkot, Gujarat, India</h6>
+            <p class="studio-desc small mb-0">Serving clients locally & internationally</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="custom-footer-wrapper">
+    
+    <section class="custom-cta-banner text-white">
+        <div class="container-fluid custom-container">
+            <div class="row align-items-center gy-3">
+                <div class="col-md-7 text-center text-md-start">
+                    <h2 class="banner-heading">Have a Project in Mind?</h2>
+                    <p class="banner-subtext">Let's build something extraordinary together. Reach out today.</p>
+                </div>
+                <div class="col-md-5 text-center text-md-end">
+                    <div class="btn-wrapper d-inline-flex align-items-center gap-3">
+                        <a href="#" class="btn btn-filled">Start a Project</a>
+                        <a href="#" class="btn btn-outlined">Watch Showreel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="custom-black-footer">
+        <div class="container-fluid custom-container">
+            <div class="row align-items-center gy-3">
+              
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="footer-logo"><span class="accent-color">iMACK</span> Production</h3>
+                    <p class="footer-copyright">© 2025 | Mack Production · Rajkot, India</p>
+                </div>
+                <div class="col-md-8 text-center text-md-end">
+                    <div class="footer-links">
+                        <a href="#">Work</a>
+                        <a href="#">Services</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Youtube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bundle.min.js"></script>
+    
+    <script>
+        const dot = document.querySelector('.custom-cursor-dot');
+        const circle = document.querySelector('.custom-cursor-circle');
+
+        document.addEventListener('mousemove', (e) => {
+            // Update dot instantly
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+            
+            // Outer circle slightly lags or syncs via CSS transitions
+            circle.style.left = e.clientX + 'px';
+            circle.style.top = e.clientY + 'px';
+        });
+
+        // Hover effect list tags/classes
+        const interactiveElements = document.querySelectorAll('a, button, .project-card, .service-card-custom, .featured-card, .vfx-card, .cgi-card');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                dot.classList.add('cursor-hover');
+                circle.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                dot.classList.remove('cursor-hover');
+                circle.classList.remove('cursor-hover');
+            });
+        });
+    </script>
+</body>
+</html>
