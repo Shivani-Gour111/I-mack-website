@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background: #07100e;
+background: #03120E;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
@@ -38,7 +38,7 @@ button,
 
 /* Navbar */
 .custom-navbar {
-    background: #07100e;
+    background: #03120E;
     padding: 8px 0;
 }
 
@@ -47,7 +47,7 @@ button,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #07100e;
+    background: #03120E;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -57,42 +57,45 @@ button,
 }
 
 .logo h2 {
+    font-family: 'Montserrat', sans-serif; /* Gol "i" aur sahi font ke liye */
     color: #2AAF89;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.4rem;                     /* Size thoda badhaya taaki sharp dikhe */
+    font-weight: 700;                      /* Isse IMACK ekdum bold ho jayega */
     margin: 0;
     line-height: 1;
 }
 
 .logo span {
-    color: #fff;
+    color: #fff; /* "i" ko white rakhne ke liye */
 }
 
 .logo p {
+    font-family: 'Montserrat', sans-serif; /* Subtitle ke liye bhi sahi font */
     color: #a9aaa3;
-    font-size: 7px;
-    letter-spacing: 3px;
-    margin: 0;
+    font-size: 0.4rem;                     /* Size thoda adjust kiya */
+    font-weight: 500;                      /* PRODUCTION PVT.LTD ko clear dikhane ke liye */
+    letter-spacing: 3.5px;                 /* Spacing thodi aur adjust ki */
+    margin: 4px 0 0 0;                     /* IMACK aur PRODUCTION ke beech thoda gap */
     line-height: 1.2;
+    text-transform: uppercase;
 }
-
 /* Menu */
 .navbar-nav {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 25px; /* Links ke beech ka gap thoda badhane ke liye */
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 .nav-link {
     text-decoration: none;
-    font-size: 8px;
-    font-weight: 200;
-    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif; /* Google Font jo head me lagaya tha */
+    font-size: 0.6rem;                       /* Size thoda bada kiya taaki saaf dikhe */
+    font-weight: 400;                      /* Isse font perfectly BOLD (mota) ho jayega */
+    letter-spacing: 0.5px;                 /* Spacing kam ki taaki akshar jude hue dikhein */
     text-transform: uppercase;
-    padding: 0;
+    padding: 5px 10px;                     /* Thoda gap badhaya taaki click karne me aasani ho */
     color: #fff !important;
     transition: color 0.3s ease;
 }
@@ -103,25 +106,36 @@ button,
 
 /* Button */
 .project-btn {
-    background: #2AAF89;
-    color: #fff;
-    text-decoration: none;
+    /* Aapka manpasand solid font size aur padding */
+    font-size: 0.6rem; 
     padding: 4px 20px;
-    font-size: 8px;
-    font-weight: 600;
+    
+    /* Premium Gradient Background (Greenish-Teal) */
+    background: linear-gradient(135deg, #2AAF89, #1bc49b);
+    
+    font-family: 'Montserrat', sans-serif;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
     border-radius: 2px;
+    display: inline-block;
+    
+    /* Smooth transition aur halka sa shadow text ko pop karne ke liye */
+    box-shadow: 0 2px 8px rgba(42, 175, 137, 0.2);
+    transition: all 0.3s ease;
 }
 
 .project-btn:hover {
-    background: #12af94;
-    color: #fff;
+    /* Hover karne par gradient ulta ho jayega aur button thoda smooth lagega */
+    background: linear-gradient(135deg, #1bc49b, #2AAF89);
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(42, 175, 137, 0.4);
 }
-
 /* Hero Section Styling */
 .hero {
-    background-color: #07100e;
+    background-color: #03120E;
     padding-top: 30px;
     padding-bottom: 40px;
 }
@@ -297,8 +311,6 @@ button,
     border-radius: 1px;
     transition: box-shadow 0.2s ease;
 }
-
-
 .featured-card,
 .vfx-card,
 .cgi-card {
@@ -341,7 +353,7 @@ button,
 
 /* --- Stats Counter Section Styles --- */
 .stats-section {
-    background-color: #07100e;
+    background-color: #03120E;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -494,7 +506,7 @@ button,
 
 /* --- Projects Gallery Styles --- */
 .projects-gallery-section {
-    background-color: #07100e;
+    background-color: #03120E;
 }
 
 .project-card {
@@ -916,7 +928,7 @@ button,
 
 /* --- 2. Compact Black Footer --- */
 .custom-black-footer {
-    background-color: #070707;
+    background-color: #03120E;
     padding: 28px 0;
     width: 100%;
 
